@@ -2,3 +2,10 @@
 // {generate:true}
 // {direction:topDown}
 
+[+Event|+name:string;+type:string;+description:string;+startTime:DateTime;+endTime:DateTime;|+setName(in name:string):bool;+setType(in name:string):bool;+setDescription(in name:string):bool;+setTime(in startTime:DateTime, endTime:DateTime):bool]
+
+[+FoodVenue|+name:string;+Type:string;+description:string;+hours:(0..*)}|+setName(in name:string):bool;+setType(in name:string):bool;+setDescription(in name:string):bool;+setHours(in hours:(0..*)):boolW]
+
+[+Calendar|+ownerID:int;+events:(0..*)|addEvent(in event:Event)]
+
+[+User|-id:int;+username:String;+friends:(0..*)|getId():int;addFriend(in userID:int):bool;setUsername(in newUsername:string):bool]
