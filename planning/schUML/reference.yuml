@@ -1,0 +1,57 @@
+// {type:class}
+// {generate:true}
+// {direction:topDown}
+// I've added so many extensions to UML, this is schUML
+// Class symbols
+//   + : public
+//   - : internal (only accessible in the current assembly (default))
+//   I : interface (no implementations)
+//   A : abstract (must be inherited - cannot be instantiated)
+//   S : Sealed (cannot be inherited)
+
+
+// Member symbols
+//   +        : public (available to all classes)
+//   -        : private (only available to the current class (default))
+//   =        : protected (private to the current class and any derived class)
+//   $        : internal (private to all classes in the current assembly)
+//   :r       : read-only (property's get{} command only)
+//   :w      : write-only (property's set{} command only)
+//   :a       : abstract (no implementing code)
+//   :v       : virtual (default implementation)
+//   :s       : static member (attached to the Class, not the Object - global)
+//   :i       : instance Class member (attached to the object (default))
+//   member field name will be capitalized if it is a property or indexer property
+//   :(0..*)  : array
+
+
+// public class HotDrink
+[+HotDrink|+Instant:bool;-Milk:bool;$Sugar:byte;=$Description:string;=myCustomers:Customers|-=AddSugar(in amount:byte):byte:v]
+
+// internal class HotDrink
+[-HotDrink|+Instant:bool;+Milk:bool;-Sugar:byte;+Description:string;=Customers:Collection|+AddSugar(in amount:byte):byte:a]
+
+// public interface IHotDrink
+[+IHotDrink||+AddSugar(in amount:byte):byte]
+
+// public abstract class HotDrink
+[+A:HotDrink|+Instant:bool;+Milk:bool;-Sugar:byte;+Description:string|+AddSugar(in amount:byte):byte]
+
+// public sealed class HotDrink
+[+S:HotDrink|+Instant:bool;+Milk:bool;-Sugar:byte;+Description:string|+AddSugar(in amount:byte):byte]
+
+
+// class inheritance
+[+HotDrink]<-[+CupOfCocoa|+numCups:int:s;+Marshmallows:bool|AddSugar(in amount:byte):byte]
+
+// interface inheritance notation
+[+IHotDrink]^[+CupOfCoffee|+BeanType:string|]
+
+// abstract class inheritance notation
+[+A:HotDrink]<-.-[+CupOfTea|+LeafType:string|]
+
+// 1-to-1 class relationship
+[+HotDrink]1-1[+Customers|+myCustomer:Customer:(0..*)|]
+
+// 1-to-many class relationship
+[+Customers||]1-0..*[+Customer||]
