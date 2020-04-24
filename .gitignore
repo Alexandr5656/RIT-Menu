@@ -1,6 +1,6 @@
 .vs/
 *.cache
 bin/
-**/bin
-**/obj
+**/bin/
+**/obj/
 obj/
