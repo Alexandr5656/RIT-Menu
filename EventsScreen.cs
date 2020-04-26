@@ -21,6 +21,17 @@ namespace EventsLib
             // TODO: Pull events data from JSON and add to array.
             // more info in CodeStream
 
+            // make back button functional
+            backButton.Click += new EventHandler(backHome);
+
+        }
+
+        private void backHome(object sender, EventArgs e)
+        {
+
+            // i guess we will just close this window for now
+            this.Close();
+
         }
 
         private void button2_Click(object sender, EventArgs e)

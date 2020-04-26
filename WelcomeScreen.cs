@@ -23,7 +23,7 @@ namespace RIT_Menu
         {
 
             EventsScreen ep = new EventsScreen();
-            ep.Show();
+            ep.ShowDialog();
 
         }
 
