@@ -1,4 +1,4 @@
-﻿namespace EventsLib
+﻿namespace RIT_Menu
 {
     partial class EventsScreen
     {
@@ -38,7 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.filter = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -152,21 +152,25 @@
             this.backButton.Text = "< Back";
             this.backButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // comboBox1
+            // filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(829, 158);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(385, 39);
-            this.comboBox1.TabIndex = 4;
+            this.filter.DisplayMember = "All";
+            this.filter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filter.FormattingEnabled = true;
+            this.filter.Items.AddRange(new object[] {
+            "All"});
+            this.filter.Location = new System.Drawing.Point(811, 159);
+            this.filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.filter.Name = "filter";
+            this.filter.Size = new System.Drawing.Size(385, 39);
+            this.filter.TabIndex = 4;
             // 
             // EventsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1715, 1288);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.filter);
             this.Controls.Add(this.mainToolStrip);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.eventsTitle);
@@ -195,6 +199,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.ToolStripButton backButton;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox filter;
     }
 }
