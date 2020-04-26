@@ -98,14 +98,17 @@ namespace RIT_Menu
             string returnvalue = "";
             if (type.Equals("Breakfast"))
             {
+                //if(Breakfast.TimeStart!=null&&Breakfast.TimeEnd!=null)
                 returnvalue = "Breakfast: " + Change_Time(Breakfast.TimeStart) + " - " + Change_Time(Breakfast.TimeEnd);
             }
             else if (type.Equals("Lunch"))
             {
+                //if(Lunch.TimeStart!=null&&Lunch.TimeEnd!=null)
                 returnvalue = "Lunch: " + Change_Time(Lunch.TimeStart) + " - " + Change_Time(Lunch.TimeEnd);
             }
             else if (type.Equals("Dinner"))
             {
+                //if(Dinner.TimeStart!=null&&Dinner.TimeEnd!=null)
                 returnvalue = "Dinner: " + Change_Time(Dinner.TimeStart) + " - " + Change_Time(Dinner.TimeEnd);
             }
             return returnvalue;
@@ -178,6 +181,10 @@ namespace RIT_Menu
 
 
             return timing;
+        }
+        public void Add_Food(Foods food)
+        {
+        Menu.Add(food);
         }
 
     }
