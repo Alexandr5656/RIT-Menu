@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FoodApp
+namespace RIT_Menu
 {
-    public partial class Form1 : Form
+    public partial class RestaurantList : Form
     {
-        public RIT foodApp = new RIT();
-        public Form1()
+        public RIT RIT_Menu = new RIT();
+        public RestaurantList()
         {
             InitializeComponent();
 
-            foodApp.LoadResturants();
+            RIT_Menu.LoadResturants();
 
             panel1.Visible = false;
             for (int i = 0; i < 6; i++)
@@ -31,7 +31,7 @@ namespace FoodApp
         {
             flowLayoutPanel1.Controls.Clear();
 
-            foreach (Resturants rest in foodApp.Rit)
+            foreach (Resturants rest in RIT_Menu.Rit)
             {
                 if (showOpen.Checked)
                 {

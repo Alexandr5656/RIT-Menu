@@ -1,4 +1,5 @@
 ﻿using EventsLib;
+using RIT_Menu;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,12 +18,21 @@ namespace RIT_Menu
         {
             InitializeComponent();
             openEventsButton.Click += new EventHandler(openEventsScreen);
+            openFoodButton.Click += new EventHandler(openFoodScreen);
         }
 
         private void openEventsScreen(object sender, EventArgs e)
         {
 
             EventsScreen ep = new EventsScreen();
+            ep.ShowDialog();
+
+        }
+
+        private void openFoodScreen(object sender, EventArgs e)
+        {
+
+            RestaurantList ep = new RestaurantList();
             ep.ShowDialog();
 
         }

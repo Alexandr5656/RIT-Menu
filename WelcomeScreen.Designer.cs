@@ -30,6 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.openEventsButton = new System.Windows.Forms.Button();
+            this.openFoodButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -51,11 +52,21 @@
             this.openEventsButton.UseVisualStyleBackColor = true;
             this.openEventsButton.Click += new System.EventHandler(this.openEventsButton_Click);
             // 
+            // openFoodButton
+            // 
+            this.openFoodButton.Location = new System.Drawing.Point(798, 303);
+            this.openFoodButton.Name = "openFoodButton";
+            this.openFoodButton.Size = new System.Drawing.Size(424, 145);
+            this.openFoodButton.TabIndex = 2;
+            this.openFoodButton.Text = "Open Food Button";
+            this.openFoodButton.UseVisualStyleBackColor = true;
+            // 
             // WelcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1751, 819);
+            this.Controls.Add(this.openFoodButton);
             this.Controls.Add(this.openEventsButton);
             this.Controls.Add(this.label1);
             this.Name = "WelcomeScreen";
@@ -69,6 +80,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button openEventsButton;
+        private System.Windows.Forms.Button openFoodButton;
     }
 }
 

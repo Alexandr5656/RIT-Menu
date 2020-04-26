@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FoodApp
+namespace RIT_Menu
 {
 
     public partial class RestaurantDescription : Form
@@ -30,11 +30,11 @@ namespace FoodApp
             Favorites = rest.favorites;
             if (Favorites)
             {
-                favorite.Image = global::FoodApp.Properties.Resources.starOn;
+                favorite.Image = global::RIT_Menu.Properties.Resources.starOn;
             }
             else if (!Favorites)
             {
-                favorite.Image = global::FoodApp.Properties.Resources.star;
+                favorite.Image = global::RIT_Menu.Properties.Resources.star;
             }
             this.ShowDialog();
 
@@ -100,13 +100,13 @@ namespace FoodApp
         {
             if (Favorites)
             {
-                favorite.Image = global::FoodApp.Properties.Resources.star;
+                favorite.Image = global::RIT_Menu.Properties.Resources.star;
                 rests.favorites = false;
                 Favorites = false;
             }
             else if (!Favorites)
             {
-                favorite.Image = global::FoodApp.Properties.Resources.starOn;
+                favorite.Image = global::RIT_Menu.Properties.Resources.starOn;
                 rests.favorites = true;
                 Favorites = true;
             }
