@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +55,24 @@
     <Compile Include="EventsScreen.Designer.cs">
       <DependentUpon>EventsScreen.cs</DependentUpon>
     </Compile>
+    <Compile Include="FoodClasses.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <DependentUpon>Resources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="RestaurantDescription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestaurantDescription.Designer.cs">
+      <DependentUpon>RestaurantDescription.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RestaurantList.Designer.cs">
+      <DependentUpon>RestaurantList.cs</DependentUpon>
+    </Compile>
     <Compile Include="WelcomeScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,13 +89,17 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="RestaurantDescription.resx">
+      <DependentUpon>RestaurantDescription.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RestaurantList.resx">
+      <DependentUpon>RestaurantList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WelcomeScreen.resx">
       <DependentUpon>WelcomeScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="json1.json" />
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +118,15 @@
       <Project>{43b75524-ffe2-4ac4-a872-55f88defc89a}</Project>
       <Name>EventsLib</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\star.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\starOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

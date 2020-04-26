@@ -1,0 +1,80 @@
+[
+
+  {
+    "Name": "Artesano",
+    "Description": "So amazing",
+    "Type": [
+      "Take-Out",
+      "Dinner",
+      "Breakfast",
+      "Lunch"
+
+    ],
+    "Menu": [
+      {
+        "Name": "Nuggets",
+        "Price": 34
+      },
+      {
+        "Name": "wgresge",
+        "Price": 34
+      },
+      {
+
+        "Name": "fdsg",
+        "Price": 232
+
+      },
+      {
+        "Name": "herwr",
+        "Price": 34
+      }
+    ],
+    "Specials": [
+      {
+        "Name": "etwer",
+        "Price": 34
+      }
+    ],
+    "HourOpen": 1242,
+    "HourClose": 2200,
+    "favorites": true,
+    "Breakfast": {
+      "TimeStart": 1400,
+      "TimeEnd": 1700
+    },
+    "Lunch": {
+      "TimeStart": 1400,
+      "TimeEnd": 1700
+    },
+    "Dinner": {
+      "TimeStart": 1400,
+      "TimeEnd": 1700
+    }
+
+
+
+  }
+  ,
+  {
+    "Name": "NotRitz",
+    "Description": "So amazing",
+    "Type": [
+      "Take-Out",
+      "Dinner"
+
+    ],
+    "Menu": [
+      {
+        "Name": "etrrr",
+        "Price": 34
+      }
+    ],
+    "Specials": [
+
+    ],
+    "HourOpen": 1242,
+    "HourClose": 1800,
+    
+  }
+]

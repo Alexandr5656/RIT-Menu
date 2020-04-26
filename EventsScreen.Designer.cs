@@ -1,4 +1,4 @@
-﻿namespace EventsLib
+﻿namespace RIT_Menu
 {
     partial class EventsScreen
     {
@@ -36,20 +36,20 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.mainToolStrip = new System.Windows.Forms.ToolStrip();
+            this.backButton = new System.Windows.Forms.ToolStripButton();
+            this.filter = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.toolStrip1.SuspendLayout();
+            this.mainToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // eventsTitle
             // 
             this.eventsTitle.AutoSize = true;
             this.eventsTitle.Font = new System.Drawing.Font("Arial", 27.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventsTitle.Location = new System.Drawing.Point(27, 100);
+            this.eventsTitle.Location = new System.Drawing.Point(27, 115);
             this.eventsTitle.Name = "eventsTitle";
             this.eventsTitle.Size = new System.Drawing.Size(734, 108);
             this.eventsTitle.TabIndex = 0;
@@ -61,10 +61,10 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 320);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 534);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1715, 968);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1715, 754);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -80,7 +80,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(32, 33, 32, 33);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1619, 477);
+            this.groupBox1.Size = new System.Drawing.Size(1619, 441);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Event Name";
@@ -127,47 +127,51 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // toolStrip1
+            // mainToolStrip
             // 
-            this.toolStrip1.ImageScalingSize = new System.Drawing.Size(40, 40);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Padding = new System.Windows.Forms.Padding(0);
-            this.toolStrip1.Size = new System.Drawing.Size(1715, 52);
-            this.toolStrip1.TabIndex = 3;
-            this.toolStrip1.Text = "toolStrip1";
+            this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(40, 40);
+            this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backButton});
+            this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.mainToolStrip.Name = "mainToolStrip";
+            this.mainToolStrip.Padding = new System.Windows.Forms.Padding(0);
+            this.mainToolStrip.Size = new System.Drawing.Size(1715, 52);
+            this.mainToolStrip.TabIndex = 3;
+            this.mainToolStrip.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // backButton
             // 
-            this.toolStripButton1.BackColor = System.Drawing.Color.White;
-            this.toolStripButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButton1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(112, 45);
-            this.toolStripButton1.Text = "< Back";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.backButton.BackColor = System.Drawing.Color.White;
+            this.backButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.backButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.backButton.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.backButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.backButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(112, 45);
+            this.backButton.Text = "< Back";
+            this.backButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // comboBox1
+            // filter
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(832, 157);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(385, 39);
-            this.comboBox1.TabIndex = 4;
+            this.filter.DisplayMember = "All";
+            this.filter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.filter.FormattingEnabled = true;
+            this.filter.Items.AddRange(new object[] {
+            "All"});
+            this.filter.Location = new System.Drawing.Point(811, 159);
+            this.filter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.filter.Name = "filter";
+            this.filter.Size = new System.Drawing.Size(385, 39);
+            this.filter.TabIndex = 4;
             // 
             // EventsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1715, 1288);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.filter);
+            this.Controls.Add(this.mainToolStrip);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.eventsTitle);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -177,8 +181,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.mainToolStrip.ResumeLayout(false);
+            this.mainToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,8 +197,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ToolStrip mainToolStrip;
+        private System.Windows.Forms.ToolStripButton backButton;
+        private System.Windows.Forms.ComboBox filter;
     }
 }
