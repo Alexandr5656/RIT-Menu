@@ -18,11 +18,11 @@ namespace FoodApp
             InitializeComponent();
 
             foodApp.LoadResturants();
-            
+
             panel1.Visible = false;
             for (int i = 0; i < 6; i++)
-            { 
-            restCheck.SetItemChecked(i,true);
+            {
+                restCheck.SetItemChecked(i, true);
             }
             InitializePanels();
         }
@@ -47,7 +47,7 @@ namespace FoodApp
                         }
                     }
                 }
-                else if(!showOpen.Checked)
+                else if (!showOpen.Checked)
                 {
 
                     foreach (string type in restCheck.CheckedItems)
@@ -60,7 +60,7 @@ namespace FoodApp
                     }
                 }
             }
-            
+
         }
         //Adds a panel
         private void AddPanel(Resturants resturant)
@@ -77,7 +77,7 @@ namespace FoodApp
             int countMeal = 0;
             foreach (string meal in resturant.Type)
             {
-                Add_Label(ref panel1, 50, 59+(10*countMeal), meal);
+                Add_Label(ref panel1, 50, 59 + (10 * countMeal), meal);
             }
             if (resturant.Specials.Count() > 0)
             {
@@ -97,7 +97,7 @@ namespace FoodApp
                     if (i >= 2)
                         break;
                     Add_Label(ref panel1, 50, 59 + (10 * i), resturant.Menu[i].Name);
-                    
+
                 }
             }
             this.flowLayoutPanel1.Controls.Add(panel1);
@@ -108,7 +108,7 @@ namespace FoodApp
         {
             resturant.Clicked = false;
 
-            
+
             Label restLabel = new System.Windows.Forms.Label();
             Label cashLabel = new System.Windows.Forms.Label();
             Button addButton = new System.Windows.Forms.Button();
@@ -169,7 +169,7 @@ namespace FoodApp
             addButton.Size = new System.Drawing.Size(78, 66);
             addButton.TabIndex = 2;
             addButton.UseVisualStyleBackColor = true;
-            addButton.Click += (sender,e)=>adding(sender,e, resturant);
+            addButton.Click += (sender, e) => adding(sender, e, resturant);
             // 
             // specialLabel
             // 
@@ -187,8 +187,8 @@ namespace FoodApp
             SpecialOne.Name = "SpecialOne";
             SpecialOne.Size = new System.Drawing.Size(46, 17);
             SpecialOne.TabIndex = 4;
-            
-            
+
+
             // 
             // specialTwo
             // 
@@ -197,7 +197,7 @@ namespace FoodApp
             specialTwo.Name = "specialTwo";
             specialTwo.Size = new System.Drawing.Size(46, 17);
             specialTwo.TabIndex = 5;
-            
+
             // 
             // specialThree
             // 
@@ -206,12 +206,12 @@ namespace FoodApp
             specialThree.Name = "specialThree";
             specialThree.Size = new System.Drawing.Size(46, 17);
             specialThree.TabIndex = 6;
-            
-            Label[] sl = { SpecialOne,specialTwo,specialThree};
+
+            Label[] sl = { SpecialOne, specialTwo, specialThree };
             // sl.Add(SpecialOne);
             // sl.Add(specialTwo);
             //  sl.Add(specialThree);
-            if (resturant.Specials.Count()>0)
+            if (resturant.Specials.Count() > 0)
             {
                 for (int i = 0; i < resturant.Specials.Count; i++)
                 {
@@ -236,7 +236,7 @@ namespace FoodApp
             breakfastLabel.Size = new System.Drawing.Size(68, 17);
             breakfastLabel.TabIndex = 7;
             breakfastLabel.Text = "Breakfast";
-            
+
             breakfastLabel.Visible = resturant.Type.Contains("Breakfast");
             // 
             // lunchLabel
@@ -247,7 +247,7 @@ namespace FoodApp
             lunchLabel.Size = new System.Drawing.Size(47, 17);
             lunchLabel.TabIndex = 8;
             lunchLabel.Text = "Lunch";
-            lunchLabel.Visible = resturant.Type.Contains("Lunch"); 
+            lunchLabel.Visible = resturant.Type.Contains("Lunch");
             // 
             // dinnerLabel
             // 
@@ -267,11 +267,11 @@ namespace FoodApp
             openedLabel.Size = new System.Drawing.Size(100, 23);
             openedLabel.TabIndex = 10;
             openedLabel.AutoSize = true;
-            openedLabel.RightToLeft = System.Windows.Forms.RightToLeft.No; 
+            openedLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             openedLabel.Text = resturant.times();
 
         }
-        private void Add_Label(ref Panel panel1,int locx,int locy, string text)
+        private void Add_Label(ref Panel panel1, int locx, int locy, string text)
         {
             Label newLabel = new System.Windows.Forms.Label();
             panel1.Controls.Add(newLabel);
@@ -284,27 +284,27 @@ namespace FoodApp
         }
         private void label3_Click(object sender, EventArgs e)
         {
-            
+
         }
         //Checks to see if any of the categories have been changed to only display those catergories.
         private void restCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
-           
+
             InitializePanels();
-            
+
         }
         //If the name of the resturant is clicked more details will show up 
-        private void nameClick(object sender, EventArgs e,Resturants rest)
-        { 
+        private void nameClick(object sender, EventArgs e, Resturants rest)
+        {
             this.Visible = false;
-            ResterantDescription popup = new ResterantDescription(rest,this);
-            
-            
-           
-            
+            RestaurantDescription popup = new RestaurantDescription(rest, this);
+
+
+
+
         }
         //If the add button is pressed this event is called which opens up a new form to add that resurant to your calender
-        private void adding(object sender, EventArgs e,Resturants rest)
+        private void adding(object sender, EventArgs e, Resturants rest)
         {
             Button tsb = (Button)sender;
             if (rest.Clicked)
@@ -323,7 +323,7 @@ namespace FoodApp
         }
         private void addButton_Click(object sender, EventArgs e)
         {
-           
+
         }
         //Checks to see if the "Show closed resturants" button is checked
         private void ShowClosed_CheckedChanged(object sender, EventArgs e)
