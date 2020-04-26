@@ -69,37 +69,8 @@ namespace RIT_Menu
 
             AddResturantToPanel(ref panel1, resturant);
             //Add_Label(ref panel1, 50, 59, resturant.Name);
-            Add_Label(ref panel1, 50, 59, resturant.times());
-            Add_Label(ref panel1, 50, 59, resturant.Costs());
-            Add_Label(ref panel1, 50, 59, resturant.Name);
-            Add_Label(ref panel1, 50, 59, resturant.Name);
-            Add_Label(ref panel1, 50, 59, resturant.Name);
-            int countMeal = 0;
-            foreach (string meal in resturant.Type)
-            {
-                Add_Label(ref panel1, 50, 59 + (10 * countMeal), meal);
-            }
-            if (resturant.Specials.Count() > 0)
-            {
-                for (int i = 0; i < resturant.Specials.Count; i++)
-                {
-                    if (i >= 2)
-                        break;
-                    Add_Label(ref panel1, 50, 59 + (10 * i), resturant.Specials[i].Name);
-                }
-
-
-            }
-            else if (resturant.Menu.Count() > 0)
-            {
-                for (int i = 0; i < resturant.Specials.Count; i++)
-                {
-                    if (i >= 2)
-                        break;
-                    Add_Label(ref panel1, 50, 59 + (10 * i), resturant.Menu[i].Name);
-
-                }
-            }
+           
+            
             this.flowLayoutPanel1.Controls.Add(panel1);
             this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }
@@ -170,61 +141,41 @@ namespace RIT_Menu
             addButton.TabIndex = 2;
             addButton.UseVisualStyleBackColor = true;
             addButton.Click += (sender, e) => adding(sender, e, resturant);
-            // 
-            // specialLabel
-            // 
+
+
+            /************************************/
+            /*            Menus Handling        */
+            /************************************/ 
+
+
             specialLabel.AutoSize = true;
             specialLabel.Location = new System.Drawing.Point(39, 102);
             specialLabel.Name = "specialLabel";
             specialLabel.Size = new System.Drawing.Size(61, 17);
             specialLabel.TabIndex = 3;
             specialLabel.Text = "Specials";
-            // 
-            // SpecialOne
-            // 
-            SpecialOne.AutoSize = true;
-            SpecialOne.Location = new System.Drawing.Point(39, 140);
-            SpecialOne.Name = "SpecialOne";
-            SpecialOne.Size = new System.Drawing.Size(46, 17);
-            SpecialOne.TabIndex = 4;
-
-
-            // 
-            // specialTwo
-            // 
-            specialTwo.AutoSize = true;
-            specialTwo.Location = new System.Drawing.Point(39, 160);
-            specialTwo.Name = "specialTwo";
-            specialTwo.Size = new System.Drawing.Size(46, 17);
-            specialTwo.TabIndex = 5;
-
-            // 
-            // specialThree
-            // 
-            specialThree.AutoSize = true;
-            specialThree.Location = new System.Drawing.Point(39, 180);
-            specialThree.Name = "specialThree";
-            specialThree.Size = new System.Drawing.Size(46, 17);
-            specialThree.TabIndex = 6;
-
-            Label[] sl = { SpecialOne, specialTwo, specialThree };
-            // sl.Add(SpecialOne);
-            // sl.Add(specialTwo);
-            //  sl.Add(specialThree);
-            if (resturant.Specials.Count() > 0)
+            
+             if (resturant.Specials.Count() > 0)
             {
+                specialLabel.Text = "Specials";
                 for (int i = 0; i < resturant.Specials.Count; i++)
                 {
-                    sl[i].Text = resturant.Specials[i].Name;
+                    if (i >= 2)
+                        break;
+                    Add_Label(ref panel1, 49, 140 + (10 * i), resturant.Specials[i].Name);
                 }
 
 
             }
             else if (resturant.Menu.Count() > 0)
             {
+                specialLabel.Text = "Menu";
                 for (int i = 0; i < resturant.Specials.Count; i++)
                 {
-                    sl[i].Text = resturant.Menu[i].Name;
+                    if (i >= 2)
+                        break;
+                    Add_Label(ref panel1, 40, 140 + (10 * i), resturant.Menu[i].Name);
+
                 }
             }
             // 

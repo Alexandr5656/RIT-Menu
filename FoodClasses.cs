@@ -182,6 +182,7 @@ namespace RIT_Menu
 
             return timing;
         }
+        //Adds a food to the menu for a webscraper may be usesless for now
         public void Add_Food(Foods food)
         {
         Menu.Add(food);
