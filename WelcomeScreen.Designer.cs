@@ -35,7 +35,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(727, 118);
+            this.label1.Location = new System.Drawing.Point(601, 100);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(293, 32);
             this.label1.TabIndex = 0;
@@ -43,9 +43,9 @@
             // 
             // openEventsButton
             // 
-            this.openEventsButton.Location = new System.Drawing.Point(206, 297);
+            this.openEventsButton.Location = new System.Drawing.Point(262, 303);
             this.openEventsButton.Name = "openEventsButton";
-            this.openEventsButton.Size = new System.Drawing.Size(353, 160);
+            this.openEventsButton.Size = new System.Drawing.Size(358, 160);
             this.openEventsButton.TabIndex = 1;
             this.openEventsButton.Text = "Open Events Page";
             this.openEventsButton.UseVisualStyleBackColor = true;
@@ -55,7 +55,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1751, 828);
+            this.ClientSize = new System.Drawing.Size(1751, 819);
             this.Controls.Add(this.openEventsButton);
             this.Controls.Add(this.label1);
             this.Name = "WelcomeScreen";

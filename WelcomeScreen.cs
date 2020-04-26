@@ -16,13 +16,13 @@ namespace RIT_Menu
         public WelcomeScreen()
         {
             InitializeComponent();
-            openEventsButton.Click += new EventHandler(openEventsPage);
+            openEventsButton.Click += new EventHandler(openEventsScreen);
         }
 
-        private void openEventsPage(object sender, EventArgs e)
+        private void openEventsScreen(object sender, EventArgs e)
         {
 
-            EventsPage ep = new EventsPage();
+            EventsScreen ep = new EventsScreen();
             ep.Show();
 
         }

@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace EventsLib
 {
-    public partial class EventsPage : Form
+    public partial class EventsScreen : Form
     {
         List<Event> events = new List<Event>();
 
-        public EventsPage()
+        public EventsScreen()
         {
             InitializeComponent();
 
@@ -29,6 +29,16 @@ namespace EventsLib
         }
 
         private void eventsTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
 
         }
