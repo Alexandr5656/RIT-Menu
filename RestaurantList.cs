@@ -26,7 +26,10 @@ namespace RIT_Menu
             }
             InitializePanels();
         }
-        //Creates all the panels
+        
+        /**************************************/
+        /*          Creates panels            */
+        /**************************************/
         private void InitializePanels()
         {
             flowLayoutPanel1.Controls.Clear();
@@ -62,7 +65,9 @@ namespace RIT_Menu
             }
 
         }
-        //Adds a panel
+        /**********************************/
+        /*          Adds a Panel          */
+        /**********************************/
         private void AddPanel(Resturants resturant)
         {
             Panel panel1 = new System.Windows.Forms.Panel();
@@ -74,12 +79,15 @@ namespace RIT_Menu
             this.flowLayoutPanel1.Controls.Add(panel1);
             this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }
-        //Adds a resturant to the panel
+        /*****************************************************/
+        /*          Adds a resturant to the panel            */
+        /*****************************************************/
         private void AddResturantToPanel(ref Panel panel1, Resturants resturant)
         {
+            /************************************/
+            /*  Initiliazing controls Handling  */
+            /************************************/ 
             resturant.Clicked = false;
-
-
             Label restLabel = new System.Windows.Forms.Label();
             Label cashLabel = new System.Windows.Forms.Label();
             Button addButton = new System.Windows.Forms.Button();
@@ -91,9 +99,12 @@ namespace RIT_Menu
             Label lunchLabel = new System.Windows.Forms.Label();
             Label dinnerLabel = new System.Windows.Forms.Label();
             Label openedLabel = new System.Windows.Forms.Label();
-            // 
-            // panel1
-            // 
+
+
+
+            /************************************/
+            /*            Panel Handling        */
+            /************************************/ 
             panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             panel1.Controls.Add(openedLabel);
             panel1.Controls.Add(dinnerLabel);
@@ -112,9 +123,12 @@ namespace RIT_Menu
             panel1.Size = new System.Drawing.Size(400, 279);
             panel1.BackColor = System.Drawing.Color.DimGray;
             panel1.TabIndex = 0;
-            // 
-            // restLabel
-            // 
+
+
+
+            /************************************/
+            /*       Name of the Resturant      */
+            /************************************/ 
             restLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             restLabel.Location = new System.Drawing.Point(0, 13);
             restLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -123,18 +137,24 @@ namespace RIT_Menu
             restLabel.TabIndex = 0;
             restLabel.Text = resturant.Name;
             restLabel.Click += (sender, e) => nameClick(sender, e, resturant);
-            // 
-            // cashLabel
-            // 
+
+
+
+            /************************************/
+            /*            Cost Labeling         */
+            /************************************/ 
             cashLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             cashLabel.Location = new System.Drawing.Point(167, 248);
             cashLabel.Name = "cashLabel";
             cashLabel.Size = new System.Drawing.Size(57, 27);
             cashLabel.TabIndex = 1;
             cashLabel.Text = resturant.Costs();
-            // 
-            // addButton
-            // 
+
+
+
+            /************************************/
+            /*            AddButton             */
+            /************************************/ 
             addButton.Location = new System.Drawing.Point(320, -2);
             addButton.Name = "addButton";
             addButton.Size = new System.Drawing.Size(78, 66);
@@ -145,9 +165,7 @@ namespace RIT_Menu
 
             /************************************/
             /*            Menus Handling        */
-            /************************************/ 
-
-
+            /************************************/
             specialLabel.AutoSize = true;
             specialLabel.Location = new System.Drawing.Point(39, 102);
             specialLabel.Name = "specialLabel";
@@ -178,20 +196,23 @@ namespace RIT_Menu
 
                 }
             }
-            // 
-            // breakfastLabel
-            // 
+
+
+            /************************************/
+            /*        Breakfast Handling        */
+            /************************************/ 
             breakfastLabel.AutoSize = true;
             breakfastLabel.Location = new System.Drawing.Point(320, 141);
             breakfastLabel.Name = "breakfastLabel";
             breakfastLabel.Size = new System.Drawing.Size(68, 17);
             breakfastLabel.TabIndex = 7;
             breakfastLabel.Text = "Breakfast";
-
             breakfastLabel.Visible = resturant.Type.Contains("Breakfast");
-            // 
-            // lunchLabel
-            // 
+
+
+            /************************************/
+            /*            Lunch Handling        */
+            /************************************/ 
             lunchLabel.AutoSize = true;
             lunchLabel.Location = new System.Drawing.Point(320, 174);
             lunchLabel.Name = "lunchLabel";
@@ -199,9 +220,11 @@ namespace RIT_Menu
             lunchLabel.TabIndex = 8;
             lunchLabel.Text = "Lunch";
             lunchLabel.Visible = resturant.Type.Contains("Lunch");
-            // 
-            // dinnerLabel
-            // 
+
+
+            /************************************/
+            /*            Dinner Handling       */
+            /************************************/ 
             dinnerLabel.AutoSize = true;
             dinnerLabel.Location = new System.Drawing.Point(320, 202);
             dinnerLabel.Name = "dinnerLabel";
@@ -209,9 +232,13 @@ namespace RIT_Menu
             dinnerLabel.TabIndex = 9;
             dinnerLabel.Text = "Dinner";
             dinnerLabel.Visible = resturant.Type.Contains("Dinner");
-            // 
-            // openedLabel
-            // 
+
+
+
+
+            /************************************/
+            /*            Open Sentence         */
+            /************************************/ 
             openedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             openedLabel.Location = new System.Drawing.Point(150, 13);
             openedLabel.Name = "openedLabel";
@@ -222,6 +249,9 @@ namespace RIT_Menu
             openedLabel.Text = resturant.times();
 
         }
+        /*****************************************************/
+        /*           Adds a Label to the panel               */
+        /*****************************************************/
         private void Add_Label(ref Panel panel1, int locx, int locy, string text)
         {
             Label newLabel = new System.Windows.Forms.Label();
@@ -233,18 +263,25 @@ namespace RIT_Menu
             newLabel.TabIndex = 5;
             newLabel.Text = text;
         }
+        /*****************************************************/
+        /*                    Un-Used Method                 */
+        /*****************************************************/
         private void label3_Click(object sender, EventArgs e)
         {
 
         }
-        //Checks to see if any of the categories have been changed to only display those catergories.
+        /******************************************************************************************************************/
+        /*          Checks to see if any of the categories have been changed to only display those catergories.           */
+        /******************************************************************************************************************/
         private void restCheck_SelectedIndexChanged(object sender, EventArgs e)
         {
 
             InitializePanels();
 
         }
-        //If the name of the resturant is clicked more details will show up 
+        /******************************************************************************************/
+        /*          If the name of the resturant is clicked more details will show up .           */
+        /******************************************************************************************/
         private void nameClick(object sender, EventArgs e, Resturants rest)
         {
             this.Visible = false;
@@ -254,7 +291,9 @@ namespace RIT_Menu
 
 
         }
-        //If the add button is pressed this event is called which opens up a new form to add that resurant to your calender
+        /***********************************************************************************************************************/
+        /* If the add button is pressed this event is called which opens up a new form to add that resurant to your calender.  */
+        /***********************************************************************************************************************/
         private void adding(object sender, EventArgs e, Resturants rest)
         {
             Button tsb = (Button)sender;
@@ -272,17 +311,25 @@ namespace RIT_Menu
                 rest.Clicked = true;
             }
         }
+        /*****************************************************/
+        /*                    Un-Used Method                 */
+        /*****************************************************/
         private void addButton_Click(object sender, EventArgs e)
         {
 
         }
-        //Checks to see if the "Show closed resturants" button is checked
+        /*********************************************************************/
+        /* Checks to see if the "Show closed resturants" button is checked.  */
+        /*********************************************************************/
+
         private void ShowClosed_CheckedChanged(object sender, EventArgs e)
         {
 
             InitializePanels();
         }
-
+        /*****************************************************/
+        /*                    Un-Used Method                 */
+        /*****************************************************/
         private void suggestedLabel_Click(object sender, EventArgs e)
         {
 
