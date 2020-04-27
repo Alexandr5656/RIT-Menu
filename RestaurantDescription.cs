@@ -110,6 +110,8 @@ namespace RIT_Menu
                 rests.favorites = true;
                 Favorites = true;
             }
+            parentform.InitializePanels();
+
         }
     }
 }

@@ -24,6 +24,17 @@ namespace RIT_Menu
 
             }
         }
+        public void SaveResturants()
+        {
+            System.IO.File.WriteAllText(@"../../json1.json", string.Empty);
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter("../../json1.json"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, Rit);
+              
+            }
+        }
     }
     public class Resturants
     {
