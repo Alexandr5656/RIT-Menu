@@ -35,6 +35,9 @@ namespace RIT_Menu
             // make back button functional
             backButton.Click += new EventHandler(backHome);
 
+            // event handler for plus button
+            addEventButton.Click += new EventHandler(newEventClick);
+
             // event handler for file save
             saveEventsButton.Click += new EventHandler(saveEvents);
 
@@ -42,7 +45,7 @@ namespace RIT_Menu
             foreach (Event thisEvent in events)
             {
 
-                addPanel(thisEvent);
+                addEventToList(thisEvent);
 
             }
 
@@ -87,6 +90,13 @@ namespace RIT_Menu
 
         }
 
+        private void newEventClick(object sender, EventArgs e)
+        {
+
+            MessageBox.Show("This feature is coming soon :)");
+
+        }
+
         private void saveEvents(object sender, EventArgs e)
         {
 
@@ -98,7 +108,7 @@ namespace RIT_Menu
 
         }
 
-        private void addPanel(Event thisEvent)
+        private void addEventToList(Event thisEvent)
         {
 
             // make a new GroupBox by cloning of our demo one. thanks ControlFactory!
@@ -132,6 +142,17 @@ namespace RIT_Menu
             // set the description
             Label description = (Label)thisGroupBox.Controls.Find("description", false)[0];
             description.Text = thisEvent.description;
+
+            Console.WriteLine("imageURL is " + thisEvent.imageURL);
+
+            // set the image URL if possible
+            if (thisEvent.imageURL != null)
+            {
+                PictureBox photo = (PictureBox)thisGroupBox.Controls.Find("photo", false)[0];
+                photo.ImageLocation = thisEvent.imageURL;
+                photo.BackColor = Color.Blue;
+            }
+
 
 
         }

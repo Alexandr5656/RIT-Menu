@@ -17,7 +17,7 @@ namespace EventsLib
         //Constructor function
         public Event(string name, string type, string description, DateTime start, DateTime end, string imageURL = null)
         {
-            this.update(name, type, description, start, end);
+            this.update(name, type, description, start, end, imageURL);
         }
 
         private bool setName(string name)
