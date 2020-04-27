@@ -188,7 +188,7 @@
             this.saveEventsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.saveEventsButton.Name = "saveEventsButton";
             this.saveEventsButton.Size = new System.Drawing.Size(24, 24);
-            this.saveEventsButton.Text = "toolStripButton1";
+            this.saveEventsButton.Text = "Save new events";
             // 
             // addEventButton
             // 
@@ -198,7 +198,7 @@
             this.addEventButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.addEventButton.Name = "addEventButton";
             this.addEventButton.Size = new System.Drawing.Size(24, 24);
-            this.addEventButton.Text = "toolStripButton1";
+            this.addEventButton.Text = "Add an event";
             // 
             // photo
             // 
