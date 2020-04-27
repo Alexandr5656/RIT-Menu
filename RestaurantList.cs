@@ -18,13 +18,14 @@ namespace RIT_Menu
             InitializeComponent();
 
             RIT_Menu.LoadResturants();
-
+            this.VerticalScroll.Visible = false;
             panel1.Visible = false;
             for (int i = 0; i < 6; i++)
             {
                 restCheck.SetItemChecked(i, true);
             }
             InitializePanels();
+            
         }
         
         /**************************************/
@@ -33,9 +34,11 @@ namespace RIT_Menu
         private void InitializePanels()
         {
             flowLayoutPanel1.Controls.Clear();
+            flowLayoutPanel2.Controls.Clear();
 
             foreach (Resturants rest in RIT_Menu.Rit)
             {
+               
                 if (showOpen.Checked)
                 {
                     if (rest.IsOpen)
@@ -75,9 +78,11 @@ namespace RIT_Menu
             Panel panel1 = new System.Windows.Forms.Panel();
 
             AddResturantToPanel(ref panel1, resturant);
-            //Add_Label(ref panel1, 50, 59, resturant.Name);
-           
-            
+            if (resturant.favorites)
+            {
+                this.flowLayoutPanel2.Controls.Add(panel1);
+                this.flowLayoutPanel2.Controls.SetChildIndex(panel1, flowLayoutPanel2.Controls.Count);
+            }
             this.flowLayoutPanel1.Controls.Add(panel1);
             this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }
@@ -110,6 +115,7 @@ namespace RIT_Menu
             /*            Panel Handling        */
             /************************************/ 
             panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            panel1.Margin = new System.Windows.Forms.Padding(75, 3, 50, 3);
             panel1.Controls.Add(openedLabel);
             panel1.Controls.Add(dinnerLabel);
             panel1.Controls.Add(lunchLabel);
@@ -354,7 +360,25 @@ namespace RIT_Menu
 
         }
 
+
+        /*****************************************************/
+        /*                    Un-Used Method                 */
+        /*****************************************************/
         private void Rit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        /*****************************************************/
+        /*                    Opens Menu Link                */
+        /*****************************************************/
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.rit.edu/fa/diningservices/locations");
+        }
+
+        private void RestaurantList_Load(object sender, EventArgs e)
         {
 
         }

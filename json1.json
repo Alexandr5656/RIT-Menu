@@ -75,6 +75,7 @@
     ],
     "HourOpen": 1242,
     "HourClose": 1800,
-    
+    "favorites": true
+
   }
 ]
