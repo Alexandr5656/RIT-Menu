@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.openEventsButton = new System.Windows.Forms.Button();
             this.openFoodButton = new System.Windows.Forms.Button();
+            this.openCalendarButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,14 +59,24 @@
             this.openFoodButton.Name = "openFoodButton";
             this.openFoodButton.Size = new System.Drawing.Size(424, 145);
             this.openFoodButton.TabIndex = 2;
-            this.openFoodButton.Text = "Open Food Button";
+            this.openFoodButton.Text = "Open Food Page";
             this.openFoodButton.UseVisualStyleBackColor = true;
+            // 
+            // openCalendarButton
+            // 
+            this.openCalendarButton.Location = new System.Drawing.Point(1066, 557);
+            this.openCalendarButton.Name = "openCalendarButton";
+            this.openCalendarButton.Size = new System.Drawing.Size(385, 170);
+            this.openCalendarButton.TabIndex = 3;
+            this.openCalendarButton.Text = "Open Calendar Page";
+            this.openCalendarButton.UseVisualStyleBackColor = true;
             // 
             // WelcomeScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1751, 819);
+            this.Controls.Add(this.openCalendarButton);
             this.Controls.Add(this.openFoodButton);
             this.Controls.Add(this.openEventsButton);
             this.Controls.Add(this.label1);
@@ -81,6 +92,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button openEventsButton;
         private System.Windows.Forms.Button openFoodButton;
+        private System.Windows.Forms.Button openCalendarButton;
     }
 }
 

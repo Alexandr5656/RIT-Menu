@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RIT-Menu", "RIT-Menu.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventsLib", "libraries\EventsLib\EventsLib.csproj", "{43B75524-FFE2-4AC4-A872-55F88DEFC89A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FoodApp", "FoodApp\FoodApp.csproj", "{181AEF90-5D9C-4E19-BE60-C7B192628F64}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{43B75524-FFE2-4AC4-A872-55F88DEFC89A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B75524-FFE2-4AC4-A872-55F88DEFC89A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B75524-FFE2-4AC4-A872-55F88DEFC89A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{181AEF90-5D9C-4E19-BE60-C7B192628F64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{181AEF90-5D9C-4E19-BE60-C7B192628F64}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{181AEF90-5D9C-4E19-BE60-C7B192628F64}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{181AEF90-5D9C-4E19-BE60-C7B192628F64}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

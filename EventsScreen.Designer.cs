@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EventsScreen));
             this.eventsTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -38,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
+            this.saveEventsButton = new System.Windows.Forms.ToolStripButton();
             this.filter = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -61,10 +61,11 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Controls.Add(this.groupBox1);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 534);
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 470);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1715, 754);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1715, 818);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
@@ -113,9 +114,9 @@
             this.label1.Location = new System.Drawing.Point(395, 100);
             this.label1.MaximumSize = new System.Drawing.Size(901, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(895, 192);
+            this.label1.Size = new System.Drawing.Size(178, 32);
             this.label1.TabIndex = 1;
-            this.label1.Text = resources.GetString("label1.Text");
+            this.label1.Text = "Lorem ipsum";
             // 
             // pictureBox1
             // 
@@ -131,7 +132,8 @@
             // 
             this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backButton});
+            this.backButton,
+            this.saveEventsButton});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mainToolStrip.Name = "mainToolStrip";
             this.mainToolStrip.Padding = new System.Windows.Forms.Padding(0);
@@ -151,6 +153,16 @@
             this.backButton.Size = new System.Drawing.Size(112, 45);
             this.backButton.Text = "< Back";
             this.backButton.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // saveEventsButton
+            // 
+            this.saveEventsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.saveEventsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveEventsButton.Image = global::RIT_Menu.Properties.Resources.new_save;
+            this.saveEventsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveEventsButton.Name = "saveEventsButton";
+            this.saveEventsButton.Size = new System.Drawing.Size(58, 45);
+            this.saveEventsButton.Text = "toolStripButton1";
             // 
             // filter
             // 
@@ -200,5 +212,6 @@
         private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.ToolStripButton backButton;
         private System.Windows.Forms.ComboBox filter;
+        private System.Windows.Forms.ToolStripButton saveEventsButton;
     }
 }
