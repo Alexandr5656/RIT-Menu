@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RestaurantList));
-            this.titleLabel = new System.Windows.Forms.Label();
+            this.Rit = new System.Windows.Forms.Label();
             this.Favorites = new System.Windows.Forms.Label();
             this.suggestedGB = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -52,38 +52,40 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.restCheck = new System.Windows.Forms.CheckedListBox();
             this.showOpen = new System.Windows.Forms.CheckBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.suggestedGB.SuspendLayout();
             this.allGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // titleLabel
+            // Rit
             // 
-            this.titleLabel.AutoSize = true;
-            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleLabel.Location = new System.Drawing.Point(38, 19);
-            this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(468, 76);
-            this.titleLabel.TabIndex = 0;
-            this.titleLabel.Text = "Dining Options";
+            this.Rit.BackColor = System.Drawing.Color.Black;
+            this.Rit.Font = new System.Drawing.Font("Arial", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            this.Rit.Location = new System.Drawing.Point(0, -2);
+            this.Rit.Name = "Rit";
+            this.Rit.Size = new System.Drawing.Size(1200, 133);
+            this.Rit.TabIndex = 0;
+            this.Rit.Text = "RIT";
+            this.Rit.Click += new System.EventHandler(this.Rit_Click);
             // 
             // Favorites
             // 
             this.Favorites.AutoSize = true;
-            this.Favorites.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Favorites.Location = new System.Drawing.Point(502, 109);
+            this.Favorites.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Favorites.Location = new System.Drawing.Point(473, 156);
             this.Favorites.Name = "Favorites";
-            this.Favorites.Size = new System.Drawing.Size(292, 39);
+            this.Favorites.Size = new System.Drawing.Size(287, 48);
             this.Favorites.TabIndex = 2;
-            this.Favorites.Text = "Suggested for you";
+            this.Favorites.Text = "Your Favorites";
             this.Favorites.Click += new System.EventHandler(this.suggestedLabel_Click);
             // 
             // suggestedGB
             // 
             this.suggestedGB.BackColor = System.Drawing.Color.Gray;
             this.suggestedGB.Controls.Add(this.flowLayoutPanel2);
-            this.suggestedGB.Location = new System.Drawing.Point(41, 150);
+            this.suggestedGB.Location = new System.Drawing.Point(44, 198);
             this.suggestedGB.Name = "suggestedGB";
             this.suggestedGB.Size = new System.Drawing.Size(1100, 211);
             this.suggestedGB.TabIndex = 3;
@@ -256,9 +258,10 @@
             // 
             // restCheck
             // 
-            this.restCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.restCheck.BackColor = System.Drawing.Color.Black;
             this.restCheck.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.restCheck.CheckOnClick = true;
+            this.restCheck.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
             this.restCheck.FormattingEnabled = true;
             this.restCheck.Items.AddRange(new object[] {
             "Breakfast",
@@ -267,7 +270,7 @@
             "Coffee",
             "Take-Out",
             "Dine-In"});
-            this.restCheck.Location = new System.Drawing.Point(1040, 12);
+            this.restCheck.Location = new System.Drawing.Point(1054, 12);
             this.restCheck.Name = "restCheck";
             this.restCheck.Size = new System.Drawing.Size(101, 119);
             this.restCheck.TabIndex = 6;
@@ -277,39 +280,42 @@
             // 
             this.showOpen.Appearance = System.Windows.Forms.Appearance.Button;
             this.showOpen.AutoSize = true;
-            this.showOpen.Location = new System.Drawing.Point(933, 121);
+            this.showOpen.BackColor = System.Drawing.Color.White;
+            this.showOpen.Location = new System.Drawing.Point(939, 165);
             this.showOpen.Name = "showOpen";
             this.showOpen.Size = new System.Drawing.Size(205, 27);
             this.showOpen.TabIndex = 7;
             this.showOpen.Text = "Only Show Open Resturants?";
-            this.showOpen.UseVisualStyleBackColor = true;
+            this.showOpen.UseVisualStyleBackColor = false;
             this.showOpen.CheckedChanged += new System.EventHandler(this.ShowClosed_CheckedChanged);
             // 
-            // comboBox1
+            // linkLabel1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(878, 12);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 24);
-            this.comboBox1.TabIndex = 8;
-            this.comboBox1.Text = "All";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.BackColor = System.Drawing.Color.Black;
+            this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 50F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            this.linkLabel1.Location = new System.Drawing.Point(488, 14);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(251, 95);
+            this.linkLabel1.TabIndex = 8;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Menu";
             // 
-            // Form1
+            // RestaurantList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
             this.ClientSize = new System.Drawing.Size(1182, 584);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.showOpen);
             this.Controls.Add(this.restCheck);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.suggestedGB);
             this.Controls.Add(this.Favorites);
-            this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.allGroupBox);
-            this.Name = "Form1";
+            this.Controls.Add(this.Rit);
+            this.Name = "RestaurantList";
             this.Text = "Form1";
             this.suggestedGB.ResumeLayout(false);
             this.allGroupBox.ResumeLayout(false);
@@ -322,7 +328,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label titleLabel;
+        private System.Windows.Forms.Label Rit;
         private System.Windows.Forms.Label Favorites;
         private System.Windows.Forms.GroupBox suggestedGB;
         private System.Windows.Forms.Label label3;
@@ -344,6 +350,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.CheckBox showOpen;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
