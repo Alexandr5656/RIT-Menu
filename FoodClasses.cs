@@ -137,8 +137,7 @@ namespace RIT_Menu
             }
             else if (type.Equals("Dinner"))
             {
-                //if(Dinner.TimeStart!=null&&Dinner.TimeEnd!=null)
-                returnvalue = "Dinner: " + Change_Time(Dinner.TimeStart) + " - " + Change_Time(Dinner.TimeEnd);
+                //if(Dinner.TimeStart!=null&&Dinner.Tim returnvalue = "Dinner: " + Change_Time(Dinner.TimeStart) + " - " + Change_Time(Dinner.TimeEnd);
             }
             return returnvalue;
         }

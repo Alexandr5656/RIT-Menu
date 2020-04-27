@@ -39,14 +39,15 @@
             // 
             // restName
             // 
-            this.restName.AutoSize = true;
-            this.restName.Font = new System.Drawing.Font("Helvetica", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restName.Location = new System.Drawing.Point(467, 22);
+            this.restName.BackColor = System.Drawing.Color.Black;
+            this.restName.Font = new System.Drawing.Font("Arial", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.restName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            this.restName.Location = new System.Drawing.Point(-1, -1);
             this.restName.Name = "restName";
-            this.restName.Size = new System.Drawing.Size(203, 46);
+            this.restName.Size = new System.Drawing.Size(1194, 139);
             this.restName.TabIndex = 0;
             this.restName.Text = "Resturant";
-            this.restName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.restName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
@@ -82,7 +83,7 @@
             // 
             this.Hours.AutoSize = true;
             this.Hours.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Hours.Location = new System.Drawing.Point(750, 250);
+            this.Hours.Location = new System.Drawing.Point(767, 250);
             this.Hours.Name = "Hours";
             this.Hours.Size = new System.Drawing.Size(100, 36);
             this.Hours.TabIndex = 4;
@@ -90,13 +91,16 @@
             // 
             // favorite
             // 
+            this.favorite.BackColor = System.Drawing.Color.Black;
             this.favorite.FlatAppearance.BorderSize = 0;
             this.favorite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.favorite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
             this.favorite.Image = global::RIT_Menu.Properties.Resources.star;
-            this.favorite.Location = new System.Drawing.Point(676, 22);
+            this.favorite.Location = new System.Drawing.Point(815, 49);
             this.favorite.Name = "favorite";
-            this.favorite.Size = new System.Drawing.Size(60, 60);
+            this.favorite.Size = new System.Drawing.Size(178, 39);
             this.favorite.TabIndex = 6;
+            this.favorite.Text = "Add to Favorites?";
             this.favorite.UseVisualStyleBackColor = false;
             this.favorite.Click += new System.EventHandler(this.favorite_Click);
             // 
@@ -104,7 +108,7 @@
             // 
             this.descLB.AutoSize = true;
             this.descLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descLB.Location = new System.Drawing.Point(110, 89);
+            this.descLB.Location = new System.Drawing.Point(96, 177);
             this.descLB.Name = "descLB";
             this.descLB.Size = new System.Drawing.Size(109, 25);
             this.descLB.TabIndex = 8;
@@ -115,6 +119,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
             this.ClientSize = new System.Drawing.Size(1184, 580);
             this.ControlBox = false;
             this.Controls.Add(this.descLB);

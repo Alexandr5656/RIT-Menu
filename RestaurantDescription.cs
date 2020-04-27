@@ -30,11 +30,11 @@ namespace RIT_Menu
             Favorites = rest.favorites;
             if (Favorites)
             {
-                favorite.Image = global::RIT_Menu.Properties.Resources.starOn;
+                favorite.Text = "Favorited";
             }
             else if (!Favorites)
             {
-                favorite.Image = global::RIT_Menu.Properties.Resources.star;
+                favorite.Text = "Add To Favorites?";
             }
             this.ShowDialog();
 
@@ -119,7 +119,8 @@ namespace RIT_Menu
         /*************************************/
         private void button1_Click(object sender, EventArgs e)
         {
-
+            AddingEvent ae = new AddingEvent(rests);
+                ae.Show();
         }
 
 
@@ -130,13 +131,13 @@ namespace RIT_Menu
         {
             if (Favorites)
             {
-                favorite.Image = global::RIT_Menu.Properties.Resources.star;
+                favorite.Text = "Add To Favorites?";
                 rests.favorites = false;
                 Favorites = false;
             }
             else if (!Favorites)
             {
-                favorite.Image = global::RIT_Menu.Properties.Resources.starOn;
+                favorite.Text = "Favorited";
                 rests.favorites = true;
                 Favorites = true;
             }

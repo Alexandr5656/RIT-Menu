@@ -363,7 +363,9 @@ namespace RIT_Menu
         private void adding(object sender, EventArgs e, Resturants rest)
         {
             Button tsb = (Button)sender;
-            
+            AddingEvent ae = new AddingEvent(rest);
+            ae.Show();
+
         }
 
 
@@ -375,7 +377,7 @@ namespace RIT_Menu
 
         }
 
-
+        
         /*********************************************************************/
         /* Checks to see if the "Show closed resturants" button is checked.  */
         /*********************************************************************/
