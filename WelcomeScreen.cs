@@ -19,6 +19,7 @@ namespace RIT_Menu
             InitializeComponent();
             openEventsButton.Click += new EventHandler(openEventsScreen);
             openFoodButton.Click += new EventHandler(openFoodScreen);
+            openCalendarButton.Click += new EventHandler(openCalendarScreen);
         }
 
         private void openEventsScreen(object sender, EventArgs e)
@@ -33,6 +34,14 @@ namespace RIT_Menu
         {
 
             RestaurantList ep = new RestaurantList();
+            ep.ShowDialog();
+
+        }
+
+        private void openCalendarScreen(object sender, EventArgs e)
+        {
+
+            Calendar ep = new Calendar();
             ep.ShowDialog();
 
         }

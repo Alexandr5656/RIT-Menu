@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EventsLib;
+using Newtonsoft.Json;
 
 namespace RIT_Menu
 {
@@ -19,39 +22,29 @@ namespace RIT_Menu
         {
             InitializeComponent();
 
-            // TODO: Pull events data from JSON and add to array.
-            // more info in CodeStream
+            // hide our example group box
+            this.groupBoxExample.Visible = false;
 
-            // FIXME: some demo events
-            events.Add(new Event(
-                "RIT Dance Festival",
-                "Social events",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend ullamcorper posuere. Donec velit nisi, tincidunt in placerat non, rutrum ut mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec blandit nibh libero, ut rhoncus massa elementum vitae. Praesent rhoncus feugiat nibh, a rutrum eros efficitur non.",
-                new DateTime(2020, 5, 1, 8, 30, 0),
-                new DateTime(2020, 5, 1, 12, 30, 0)
-            ));
-
-            events.Add(new Event(
-                "RIT eSports Tournament",
-                "Sports",
-                "Lorem2 ipsum dolor sit amet, consectetur adipiscing elit. In eleifend ullamcorper posuere. Donec velit nisi, tincidunt in placerat non, rutrum ut mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec blandit nibh libero, ut rhoncus massa elementum vitae. Praesent rhoncus feugiat nibh, a rutrum eros efficitur non.",
-                new DateTime(2020, 5, 5, 9, 30, 0),
-                new DateTime(2020, 5, 5, 14, 25, 0)
-            ));
-
-            events.Add(new Event(
-                "ASL Club Bake Sale",
-                "Fundraising",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eleifend ullamcorper posuere. Donec velit nisi, tincidunt in placerat non, rutrum ut mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec blandit nibh libero, ut rhoncus massa elementum vitae. Praesent rhoncus feugiat nibh, a rutrum eros efficitur non.",
-                new DateTime(2019, 5, 12, 15, 00, 0),
-                new DateTime(2019, 5, 12, 19, 30, 0)
-            ));
+            // load events from JSON & set it as the events list
+            string eventsJSON = System.IO.File.ReadAllText(@"../../events.json");
+            events = JsonConvert.DeserializeObject<List<Event>>(eventsJSON);
 
             // populate our category filter with all of the categories in the events list
             populateCategoryFilter();
 
             // make back button functional
             backButton.Click += new EventHandler(backHome);
+
+            // event handler for file save
+            saveEventsButton.Click += new EventHandler(saveEvents);
+
+            // display the events in the FlowLayoutPanel
+            foreach (Event thisEvent in events)
+            {
+
+                addPanel(thisEvent);
+
+            }
 
         }
 
@@ -91,6 +84,55 @@ namespace RIT_Menu
 
             // i guess we will just close this window for now
             this.Close();
+
+        }
+
+        private void saveEvents(object sender, EventArgs e)
+        {
+
+            string eventsJSON = JsonConvert.SerializeObject(events);
+
+            System.IO.File.WriteAllText(@"../../events.json", eventsJSON);
+
+            MessageBox.Show("Saved!");
+
+        }
+
+        private void addPanel(Event thisEvent)
+        {
+
+            // make a new GroupBox by cloning of our demo one. thanks ControlFactory!
+            Control newControl = ControlFactory.CloneCtrl(groupBoxExample);
+
+            GroupBox thisGroupBox = (GroupBox)newControl;
+
+            // show the GroupBox
+            thisGroupBox.Show();
+
+            // add our new GroupBox to the FlowLayoutPanel
+            this.flowLayoutPanel1.Controls.Add(thisGroupBox);
+            this.flowLayoutPanel1.Controls.SetChildIndex(thisGroupBox, flowLayoutPanel1.Controls.Count);
+
+            // set the name to the event title
+            thisGroupBox.Text = thisEvent.name;
+
+            // copy the controls from the example GroupBox
+            foreach (Control childControl in groupBoxExample.Controls)
+            {
+
+                Control newChildControl = ControlFactory.CloneCtrl(childControl);
+
+                // show control & add to the groupbox
+                newChildControl.Show();
+                thisGroupBox.Controls.Add(newChildControl);
+                thisGroupBox.Controls.SetChildIndex(newChildControl, thisGroupBox.Controls.Count);
+
+            }
+
+            // set the description
+            Label description = (Label)thisGroupBox.Controls.Find("description", false)[0];
+            description.Text = thisEvent.description;
+
 
         }
 

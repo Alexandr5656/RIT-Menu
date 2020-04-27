@@ -4,3 +4,4 @@ bin/
 obj/
 libraries/**/bin/
 libraries/**/obj/
+schedule.json
