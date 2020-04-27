@@ -34,7 +34,6 @@
             this.Favorites = new System.Windows.Forms.Label();
             this.suggestedGB = new System.Windows.Forms.GroupBox();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.label3 = new System.Windows.Forms.Label();
             this.allGroupBox = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.openedLabel = new System.Windows.Forms.Label();
@@ -53,6 +52,7 @@
             this.restCheck = new System.Windows.Forms.CheckedListBox();
             this.showOpen = new System.Windows.Forms.CheckBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.label1 = new System.Windows.Forms.Label();
             this.suggestedGB.SuspendLayout();
             this.allGroupBox.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -84,33 +84,23 @@
             // 
             // suggestedGB
             // 
-            this.suggestedGB.BackColor = System.Drawing.Color.Black;
+            this.suggestedGB.BackColor = System.Drawing.Color.Transparent;
             this.suggestedGB.Controls.Add(this.flowLayoutPanel2);
             this.suggestedGB.Location = new System.Drawing.Point(50, 250);
             this.suggestedGB.Name = "suggestedGB";
-            this.suggestedGB.Size = new System.Drawing.Size(1100, 394);
+            this.suggestedGB.Size = new System.Drawing.Size(1100, 327);
             this.suggestedGB.TabIndex = 3;
             this.suggestedGB.TabStop = false;
             // 
             // flowLayoutPanel2
             // 
+            this.flowLayoutPanel2.AutoScroll = true;
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 18);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1094, 373);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1094, 306);
             this.flowLayoutPanel2.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(471, 580);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(276, 39);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "All dining options";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // allGroupBox
             // 
@@ -254,7 +244,6 @@
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 18);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 3, 3, 30);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1094, 2679);
             this.flowLayoutPanel1.TabIndex = 1;
@@ -307,16 +296,27 @@
             this.linkLabel1.Text = "Menu";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(442, 588);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(340, 59);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "All Locations";
+            // 
             // RestaurantList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
             this.ClientSize = new System.Drawing.Size(1182, 653);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.showOpen);
             this.Controls.Add(this.restCheck);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.suggestedGB);
             this.Controls.Add(this.Favorites);
             this.Controls.Add(this.allGroupBox);
@@ -342,7 +342,6 @@
         private System.Windows.Forms.Label Rit;
         private System.Windows.Forms.Label Favorites;
         private System.Windows.Forms.GroupBox suggestedGB;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox allGroupBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label openedLabel;
@@ -362,5 +361,6 @@
         private System.Windows.Forms.CheckBox showOpen;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.Label label1;
     }
 }

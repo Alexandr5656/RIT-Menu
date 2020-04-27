@@ -39,7 +39,13 @@ namespace RIT_Menu
             this.ShowDialog();
 
         }
-        //Create Hour Labels
+        
+
+
+
+        /******************************************/
+        /*          Creates Hour Labels           */
+        /******************************************/
         private void Show_Hours()
         {
             string[] types = { "Breakfast", "Lunch", "Dinner" };
@@ -57,7 +63,11 @@ namespace RIT_Menu
             AddLabel(550, 240 + (count * 20), "Closes at " + rests.Change_Time(rests.HourClose));
         }
 
-        //Creates all the food labels
+      
+
+        /**************************************************/
+        /*          Creates all the food labels           */
+        /**************************************************/
         private void Show_Foods()
         {
             int count = 0;
@@ -70,7 +80,11 @@ namespace RIT_Menu
                 count++;
             }
         }
-        //Adds a label for either the food or the hour
+
+
+        /********************************/
+        /*         Adds Labels          */
+        /********************************/
         private void AddLabel(int locx, int locy, string text)
         {
 
@@ -84,18 +98,34 @@ namespace RIT_Menu
             newLabel.Text = text;
 
         }
-        //Closes this form and re-enables the parent form
+        
+
+
+
+        /*****************************************************/
+        /*          Closes this form and enables parent      */
+        /*****************************************************/
         private void Exit_Click(object sender, EventArgs e)
         {
             parentform.Visible = true;
             this.Close();
         }
 
+
+
+
+        /*************************************/
+        /*          Un-Used Method           */
+        /*************************************/
         private void button1_Click(object sender, EventArgs e)
         {
 
         }
 
+
+        /*****************************************************/
+        /*          Changes favorites json to true           */
+        /*****************************************************/
         private void favorite_Click(object sender, EventArgs e)
         {
             if (Favorites)
