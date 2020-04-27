@@ -76,7 +76,7 @@
             this.Favorites.Font = new System.Drawing.Font("Arial Black", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Favorites.Location = new System.Drawing.Point(473, 156);
             this.Favorites.Name = "Favorites";
-            this.Favorites.Size = new System.Drawing.Size(287, 48);
+            this.Favorites.Size = new System.Drawing.Size(230, 38);
             this.Favorites.TabIndex = 2;
             this.Favorites.Text = "Your Favorites";
             this.Favorites.Click += new System.EventHandler(this.suggestedLabel_Click);
@@ -94,9 +94,9 @@
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 18);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1094, 190);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1094, 192);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
             // label3
@@ -105,7 +105,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(408, 412);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(276, 39);
+            this.label3.Size = new System.Drawing.Size(218, 31);
             this.label3.TabIndex = 4;
             this.label3.Text = "All dining options";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -155,7 +155,7 @@
             this.dinnerLabel.AutoSize = true;
             this.dinnerLabel.Location = new System.Drawing.Point(320, 202);
             this.dinnerLabel.Name = "dinnerLabel";
-            this.dinnerLabel.Size = new System.Drawing.Size(50, 17);
+            this.dinnerLabel.Size = new System.Drawing.Size(38, 13);
             this.dinnerLabel.TabIndex = 9;
             this.dinnerLabel.Text = "Dinner";
             // 
@@ -164,7 +164,7 @@
             this.lunchLabel.AutoSize = true;
             this.lunchLabel.Location = new System.Drawing.Point(320, 174);
             this.lunchLabel.Name = "lunchLabel";
-            this.lunchLabel.Size = new System.Drawing.Size(47, 17);
+            this.lunchLabel.Size = new System.Drawing.Size(37, 13);
             this.lunchLabel.TabIndex = 8;
             this.lunchLabel.Text = "Lunch";
             // 
@@ -173,7 +173,7 @@
             this.breakfastLabel.AutoSize = true;
             this.breakfastLabel.Location = new System.Drawing.Point(320, 141);
             this.breakfastLabel.Name = "breakfastLabel";
-            this.breakfastLabel.Size = new System.Drawing.Size(68, 17);
+            this.breakfastLabel.Size = new System.Drawing.Size(52, 13);
             this.breakfastLabel.TabIndex = 7;
             this.breakfastLabel.Text = "Breakfast";
             // 
@@ -182,7 +182,7 @@
             this.specialThree.AutoSize = true;
             this.specialThree.Location = new System.Drawing.Point(39, 209);
             this.specialThree.Name = "specialThree";
-            this.specialThree.Size = new System.Drawing.Size(46, 17);
+            this.specialThree.Size = new System.Drawing.Size(35, 13);
             this.specialThree.TabIndex = 6;
             this.specialThree.Text = "label8";
             // 
@@ -191,7 +191,7 @@
             this.specialTwo.AutoSize = true;
             this.specialTwo.Location = new System.Drawing.Point(39, 174);
             this.specialTwo.Name = "specialTwo";
-            this.specialTwo.Size = new System.Drawing.Size(46, 17);
+            this.specialTwo.Size = new System.Drawing.Size(35, 13);
             this.specialTwo.TabIndex = 5;
             this.specialTwo.Text = "label7";
             // 
@@ -200,7 +200,7 @@
             this.SpecialOne.AutoSize = true;
             this.SpecialOne.Location = new System.Drawing.Point(39, 140);
             this.SpecialOne.Name = "SpecialOne";
-            this.SpecialOne.Size = new System.Drawing.Size(46, 17);
+            this.SpecialOne.Size = new System.Drawing.Size(35, 13);
             this.SpecialOne.TabIndex = 4;
             this.SpecialOne.Text = "label6";
             // 
@@ -209,7 +209,7 @@
             this.specialLabel.AutoSize = true;
             this.specialLabel.Location = new System.Drawing.Point(39, 102);
             this.specialLabel.Name = "specialLabel";
-            this.specialLabel.Size = new System.Drawing.Size(61, 17);
+            this.specialLabel.Size = new System.Drawing.Size(47, 13);
             this.specialLabel.TabIndex = 3;
             this.specialLabel.Text = "Specials";
             // 
@@ -251,9 +251,9 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 18);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1094, 2679);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1094, 2681);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // restCheck
@@ -272,7 +272,7 @@
             "Dine-In"});
             this.restCheck.Location = new System.Drawing.Point(1054, 12);
             this.restCheck.Name = "restCheck";
-            this.restCheck.Size = new System.Drawing.Size(101, 119);
+            this.restCheck.Size = new System.Drawing.Size(101, 105);
             this.restCheck.TabIndex = 6;
             this.restCheck.SelectedIndexChanged += new System.EventHandler(this.restCheck_SelectedIndexChanged);
             // 
@@ -283,7 +283,7 @@
             this.showOpen.BackColor = System.Drawing.Color.White;
             this.showOpen.Location = new System.Drawing.Point(939, 165);
             this.showOpen.Name = "showOpen";
-            this.showOpen.Size = new System.Drawing.Size(205, 27);
+            this.showOpen.Size = new System.Drawing.Size(157, 23);
             this.showOpen.TabIndex = 7;
             this.showOpen.Text = "Only Show Open Resturants?";
             this.showOpen.UseVisualStyleBackColor = false;
@@ -297,7 +297,7 @@
             this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
             this.linkLabel1.Location = new System.Drawing.Point(488, 14);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(251, 95);
+            this.linkLabel1.Size = new System.Drawing.Size(200, 76);
             this.linkLabel1.TabIndex = 8;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Menu";
