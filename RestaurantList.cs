@@ -65,6 +65,8 @@ namespace RIT_Menu
             }
 
         }
+
+
         /**********************************/
         /*          Adds a Panel          */
         /**********************************/
@@ -79,6 +81,8 @@ namespace RIT_Menu
             this.flowLayoutPanel1.Controls.Add(panel1);
             this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }
+
+
         /*****************************************************/
         /*          Adds a resturant to the panel            */
         /*****************************************************/
@@ -249,6 +253,8 @@ namespace RIT_Menu
             openedLabel.Text = resturant.times();
 
         }
+
+
         /*****************************************************/
         /*           Adds a Label to the panel               */
         /*****************************************************/
@@ -263,6 +269,8 @@ namespace RIT_Menu
             newLabel.TabIndex = 5;
             newLabel.Text = text;
         }
+
+
         /*****************************************************/
         /*                    Un-Used Method                 */
         /*****************************************************/
@@ -270,6 +278,8 @@ namespace RIT_Menu
         {
 
         }
+
+
         /******************************************************************************************************************/
         /*          Checks to see if any of the categories have been changed to only display those catergories.           */
         /******************************************************************************************************************/
@@ -279,6 +289,8 @@ namespace RIT_Menu
             InitializePanels();
 
         }
+
+
         /******************************************************************************************/
         /*          If the name of the resturant is clicked more details will show up .           */
         /******************************************************************************************/
@@ -291,6 +303,8 @@ namespace RIT_Menu
 
 
         }
+
+
         /***********************************************************************************************************************/
         /* If the add button is pressed this event is called which opens up a new form to add that resurant to your calender.  */
         /***********************************************************************************************************************/
@@ -311,6 +325,8 @@ namespace RIT_Menu
                 rest.Clicked = true;
             }
         }
+
+
         /*****************************************************/
         /*                    Un-Used Method                 */
         /*****************************************************/
@@ -318,15 +334,18 @@ namespace RIT_Menu
         {
 
         }
+
+
         /*********************************************************************/
         /* Checks to see if the "Show closed resturants" button is checked.  */
         /*********************************************************************/
-
         private void ShowClosed_CheckedChanged(object sender, EventArgs e)
         {
 
             InitializePanels();
         }
+
+
         /*****************************************************/
         /*                    Un-Used Method                 */
         /*****************************************************/
@@ -334,5 +353,7 @@ namespace RIT_Menu
         {
 
         }
+
+
     }
 }

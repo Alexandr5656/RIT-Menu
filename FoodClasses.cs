@@ -12,7 +12,9 @@ namespace RIT_Menu
     {
         public List<Resturants> Rit;
 
-        //Loads in all the resurants from the jsonFile
+        /*****************************************************/
+        /*          Loads in resturants from Json            */
+        /*****************************************************/
         public void LoadResturants()
         {
             using (System.IO.StreamReader r = new StreamReader("../../json1.json"))
@@ -25,12 +27,15 @@ namespace RIT_Menu
     }
     public class Resturants
     {
+
+        /*********************************/
+        /*          Variables            */
+        /*********************************/
         public string Name { get; set; }
         public string Description { get; set; }
         public List<string> Type { get; set; }
         public List<Foods> Menu { get; set; }
         public List<Foods> Specials { get; set; }
-
         public int HourOpen { get; set; }
         public int HourClose { get; set; }
         public bool Clicked { get; set; }
@@ -40,8 +45,12 @@ namespace RIT_Menu
         public MealHours Breakfast { get; set; }
         public MealHours Lunch { get; set; }
         public MealHours Dinner { get; set; }
-        //Calculates the cost by dividing the total price of every food by the amount of food then deciding
-        //how expensive the food is on average
+
+
+
+        /*****************************************************/
+        /*          Calc Cost By Average Food Price          */
+        /*****************************************************/
         public string Costs()
         {
             string pricetag = "";
@@ -61,7 +70,11 @@ namespace RIT_Menu
                 pricetag = "$$$";
             return pricetag;
         }
-        //Gives the time til closing or opening or just if its open when 
+
+
+        /*************************************************************************************/
+        /*          Gives the time til closing or opening or just if its open when           */
+        /*************************************************************************************/
         public string Time(bool OpenOrClose)
         {
             string time = "";
@@ -93,6 +106,11 @@ namespace RIT_Menu
 
             return time;
         }
+
+
+        /**************************************************************/
+        /*          Gives the open and close time of each meal        */
+        /**************************************************************/
         public string Time(string type)
         {
             string returnvalue = "";
@@ -113,7 +131,11 @@ namespace RIT_Menu
             }
             return returnvalue;
         }
-        //Changing military time to am/pm time
+
+
+        /***********************************************************/
+        /*          Changes the time from military to am/pm        */
+        /***********************************************************/
         public string Change_Time(int num)
         {
             int numChanged = num % 1200;
@@ -143,9 +165,16 @@ namespace RIT_Menu
             return ChangedTime;
         }
 
-        //Gets the current time for the next method
+
+        /********************************************************/
+        /*          Gets military time from current time        */
+        /********************************************************/
         public int timeNow = (DateTime.Now.Hour * 100 + DateTime.Now.Minute);
-        //Sends the right string to the time labels for each resturant box
+
+
+        /**************************************************/
+        /*          Returns a open/close statement        */
+        /**************************************************/
         public string times()
         {
             string timing = "";
@@ -182,7 +211,11 @@ namespace RIT_Menu
 
             return timing;
         }
-        //Adds a food to the menu for a webscraper may be usesless for now
+       
+
+        /******************************************************************************************/
+        /*          Adds a food to the menu maybe for a webscraper but its useless for now        */
+        /******************************************************************************************/
         public void Add_Food(Foods food)
         {
         Menu.Add(food);
@@ -200,7 +233,7 @@ namespace RIT_Menu
         public double Price { get; set; }
         public int TimeStart { get; set; }
         public int TimeEnd { get; set; }
-        //public string TimeOfDay { get; set; }
+       
     }
 
 }
