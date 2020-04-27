@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using EventsLib;
@@ -20,8 +22,8 @@ namespace RIT_Menu
         {
             InitializeComponent();
 
-            // TODO: Pull events data from JSON and add to array.
-            // more info in CodeStream
+            // hide our example group box
+            this.groupBoxExample.Visible = false;
 
             // load events from JSON & set it as the events list
             string eventsJSON = System.IO.File.ReadAllText(@"../../events.json");
@@ -35,6 +37,14 @@ namespace RIT_Menu
 
             // event handler for file save
             saveEventsButton.Click += new EventHandler(saveEvents);
+
+            // display the events in the FlowLayoutPanel
+            foreach (Event thisEvent in events)
+            {
+
+                addPanel(thisEvent);
+
+            }
 
         }
 
@@ -85,6 +95,44 @@ namespace RIT_Menu
             System.IO.File.WriteAllText(@"../../events.json", eventsJSON);
 
             MessageBox.Show("Saved!");
+
+        }
+
+        private void addPanel(Event thisEvent)
+        {
+
+            // make a new GroupBox by cloning of our demo one. thanks ControlFactory!
+            Control newControl = ControlFactory.CloneCtrl(groupBoxExample);
+
+            GroupBox thisGroupBox = (GroupBox)newControl;
+
+            // show the GroupBox
+            thisGroupBox.Show();
+
+            // add our new GroupBox to the FlowLayoutPanel
+            this.flowLayoutPanel1.Controls.Add(thisGroupBox);
+            this.flowLayoutPanel1.Controls.SetChildIndex(thisGroupBox, flowLayoutPanel1.Controls.Count);
+
+            // set the name to the event title
+            thisGroupBox.Text = thisEvent.name;
+
+            // copy the controls from the example GroupBox
+            foreach (Control childControl in groupBoxExample.Controls)
+            {
+
+                Control newChildControl = ControlFactory.CloneCtrl(childControl);
+
+                // show control & add to the groupbox
+                newChildControl.Show();
+                thisGroupBox.Controls.Add(newChildControl);
+                thisGroupBox.Controls.SetChildIndex(newChildControl, thisGroupBox.Controls.Count);
+
+            }
+
+            // set the description
+            Label description = (Label)thisGroupBox.Controls.Find("description", false)[0];
+            description.Text = thisEvent.description;
+
 
         }
 

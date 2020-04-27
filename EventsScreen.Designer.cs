@@ -30,18 +30,18 @@
         {
             this.eventsTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.groupBoxExample = new System.Windows.Forms.GroupBox();
+            this.time = new System.Windows.Forms.Label();
+            this.addButton = new System.Windows.Forms.Button();
+            this.description = new System.Windows.Forms.Label();
+            this.photo = new System.Windows.Forms.PictureBox();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
             this.saveEventsButton = new System.Windows.Forms.ToolStripButton();
             this.filter = new System.Windows.Forms.ComboBox();
             this.flowLayoutPanel1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBoxExample.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
             this.mainToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,74 +59,75 @@
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.groupBox1);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 470);
+            this.flowLayoutPanel1.AutoSize = true;
+            this.flowLayoutPanel1.Controls.Add(this.groupBoxExample);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 282);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(1715, 818);
+            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(1715, 818);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1715, 818);
             this.flowLayoutPanel1.TabIndex = 1;
             this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
-            // groupBox1
+            // groupBoxExample
             // 
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ImeMode = System.Windows.Forms.ImeMode.Off;
-            this.groupBox1.Location = new System.Drawing.Point(32, 33);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(32, 33, 32, 33);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(1619, 441);
-            this.groupBox1.TabIndex = 0;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Event Name";
+            this.groupBoxExample.Controls.Add(this.time);
+            this.groupBoxExample.Controls.Add(this.addButton);
+            this.groupBoxExample.Controls.Add(this.description);
+            this.groupBoxExample.Controls.Add(this.photo);
+            this.groupBoxExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxExample.ImeMode = System.Windows.Forms.ImeMode.Off;
+            this.groupBoxExample.Location = new System.Drawing.Point(32, 33);
+            this.groupBoxExample.Margin = new System.Windows.Forms.Padding(32, 33, 32, 33);
+            this.groupBoxExample.Name = "groupBoxExample";
+            this.groupBoxExample.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBoxExample.Size = new System.Drawing.Size(1619, 441);
+            this.groupBoxExample.TabIndex = 0;
+            this.groupBoxExample.TabStop = false;
+            this.groupBoxExample.Text = "Event Name";
             // 
-            // label2
+            // time
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(395, 320);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(214, 39);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "May 7, 2020";
+            this.time.AutoSize = true;
+            this.time.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.900001F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.time.Location = new System.Drawing.Point(395, 320);
+            this.time.Name = "time";
+            this.time.Size = new System.Drawing.Size(214, 39);
+            this.time.TabIndex = 2;
+            this.time.Text = "May 7, 2020";
             // 
-            // button1
+            // addButton
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.button1.Location = new System.Drawing.Point(1325, 79);
-            this.button1.Margin = new System.Windows.Forms.Padding(32, 50, 32, 33);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(232, 312);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "+ Add";
-            this.button1.UseVisualStyleBackColor = false;
+            this.addButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.addButton.Location = new System.Drawing.Point(1325, 79);
+            this.addButton.Margin = new System.Windows.Forms.Padding(32, 50, 32, 33);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(232, 312);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "+ Add";
+            this.addButton.UseVisualStyleBackColor = false;
             // 
-            // label1
+            // description
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(395, 100);
-            this.label1.MaximumSize = new System.Drawing.Size(901, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 32);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lorem ipsum";
+            this.description.AutoSize = true;
+            this.description.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.1F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.description.Location = new System.Drawing.Point(395, 100);
+            this.description.MaximumSize = new System.Drawing.Size(901, 0);
+            this.description.Name = "description";
+            this.description.Size = new System.Drawing.Size(178, 32);
+            this.description.TabIndex = 1;
+            this.description.Text = "Lorem ipsum";
             // 
-            // pictureBox1
+            // photo
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.pictureBox1.Location = new System.Drawing.Point(35, 79);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 312);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            this.photo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.photo.Location = new System.Drawing.Point(35, 79);
+            this.photo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.photo.Name = "photo";
+            this.photo.Size = new System.Drawing.Size(333, 312);
+            this.photo.TabIndex = 0;
+            this.photo.TabStop = false;
             // 
             // mainToolStrip
             // 
@@ -181,7 +182,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1715, 1288);
+            this.ClientSize = new System.Drawing.Size(1715, 1105);
             this.Controls.Add(this.filter);
             this.Controls.Add(this.mainToolStrip);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -190,9 +191,9 @@
             this.Name = "EventsScreen";
             this.Text = "EventsScreen";
             this.flowLayoutPanel1.ResumeLayout(false);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBoxExample.ResumeLayout(false);
+            this.groupBoxExample.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.mainToolStrip.ResumeLayout(false);
             this.mainToolStrip.PerformLayout();
             this.ResumeLayout(false);
@@ -204,11 +205,11 @@
 
         private System.Windows.Forms.Label eventsTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.GroupBox groupBoxExample;
+        private System.Windows.Forms.Label time;
+        private System.Windows.Forms.Label description;
+        private System.Windows.Forms.PictureBox photo;
+        private System.Windows.Forms.Button addButton;
         private System.Windows.Forms.ToolStrip mainToolStrip;
         private System.Windows.Forms.ToolStripButton backButton;
         private System.Windows.Forms.ComboBox filter;
