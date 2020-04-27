@@ -1,10 +1,1 @@
-{
-  "Day": "Sunday",
-  "Time": "0000",
-  "Event": "event 1",
-  "Day": "Monday",
-  "Time": "0000",
-  "Event": "event 2",
-  "Day": "Thursday",
-  "Time": "0300",
-  "Event": "event3"}
+[{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd"},{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd"},{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd"},{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd"},{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd"},{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd123123"},{"Day":"Sunday","Time":0,"Event":"asd"},{"Day":"Monday","Time":30,"Event":"sd"},{"Day":"Tuesday","Time":100,"Event":"asd123123"}]
