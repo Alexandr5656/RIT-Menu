@@ -16,7 +16,7 @@ namespace RIT_Menu
         public RestaurantList()
         {
             InitializeComponent();
-
+            this.FormClosing += new FormClosingEventHandler(closing_form);
             RIT_Menu.LoadResturants();
             this.VerticalScroll.Visible = false;
             panel1.Visible = false;
@@ -25,13 +25,20 @@ namespace RIT_Menu
                 restCheck.SetItemChecked(i, true);
             }
             InitializePanels();
-            
+
+        }
+        /********************************************/
+        /*          Saves Json On Closing           */
+        /********************************************/
+        public void closing_form(object sender, FormClosingEventArgs e)
+        {
+            RIT_Menu.SaveResturants();
         }
         
         /**************************************/
         /*          Creates panels            */
         /**************************************/
-        private void InitializePanels()
+        public void InitializePanels()
         {
             flowLayoutPanel1.Controls.Clear();
             flowLayoutPanel2.Controls.Clear();
@@ -47,6 +54,7 @@ namespace RIT_Menu
                         {
                             if (rest.Type.Contains(type))
                             {
+                                AddFavPanel(rest);
                                 AddPanel(rest);
                                 break;
                             }
@@ -60,6 +68,7 @@ namespace RIT_Menu
                     {
                         if (rest.Type.Contains(type))
                         {
+                            AddFavPanel(rest);
                             AddPanel(rest);
                             break;
                         }
@@ -78,13 +87,25 @@ namespace RIT_Menu
             Panel panel1 = new System.Windows.Forms.Panel();
 
             AddResturantToPanel(ref panel1, resturant);
+
+            this.flowLayoutPanel1.Controls.Add(panel1);
+
+        }
+
+
+        /***********************************************/
+        /*          Adds a Panel to Favorites          */
+        /***********************************************/
+        private void AddFavPanel(Resturants resturant)
+        {
             if (resturant.favorites)
             {
+                Panel panel1 = new System.Windows.Forms.Panel();
+
+                AddResturantToPanel(ref panel1, resturant);
+
                 this.flowLayoutPanel2.Controls.Add(panel1);
-                this.flowLayoutPanel2.Controls.SetChildIndex(panel1, flowLayoutPanel2.Controls.Count);
             }
-            this.flowLayoutPanel1.Controls.Add(panel1);
-            this.flowLayoutPanel1.Controls.SetChildIndex(panel1, flowLayoutPanel1.Controls.Count);
         }
 
 
