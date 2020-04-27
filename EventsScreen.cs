@@ -143,7 +143,10 @@ namespace RIT_Menu
             Label description = (Label)thisGroupBox.Controls.Find("description", false)[0];
             description.Text = thisEvent.description;
 
-            Console.WriteLine("imageURL is " + thisEvent.imageURL);
+            // set the time
+            Label time = (Label)thisGroupBox.Controls.Find("time", false)[0];
+            time.Text = thisEvent.startTime.ToString("dddd, MMMM @ H:mm tt");
+
 
             // set the image URL if possible
             if (thisEvent.imageURL != null)
@@ -153,10 +156,39 @@ namespace RIT_Menu
                 photo.BackColor = Color.Blue;
             }
 
+            // event handler for for adding event
+            Button addButton = (Button)thisGroupBox.Controls.Find("addButton", false)[0];
+            addButton.Click += new EventHandler(addEvent);
 
 
         }
 
+        private void addEvent(object sender, EventArgs e)
+        {
+
+            // find the event based off the parent GroupBox
+            Button buttonThatWasJustClicked = (Button)sender;
+            GroupBox parentGroupBox = (GroupBox)buttonThatWasJustClicked.Parent;
+            string eventName = parentGroupBox.Text;
+
+            // fallback stuff just in case we can't find the right event
+            Event thisEvent = new Event("undefined", "undefined", "undefined", new DateTime(), new DateTime());
+            foreach (Event anEvent in events)
+            {
+                if (anEvent.name == eventName)
+                    thisEvent = anEvent;
+            }
+
+            AddToCal.addToCalendar(thisEvent.name, thisEvent.startTime, thisEvent.endTime);
+
+            buttonThatWasJustClicked.Text = "Added!";
+            buttonThatWasJustClicked.BackColor = Color.LightGreen;
+            buttonThatWasJustClicked.Enabled = false;
+
+        }
+
+
+        // oopsies:
         private void button2_Click(object sender, EventArgs e)
         {
 
