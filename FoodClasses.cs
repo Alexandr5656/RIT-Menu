@@ -245,5 +245,37 @@ namespace RIT_Menu
         public int TimeEnd { get; set; }
        
     }
+    public class Menus
+    {
+        public string Name{get;set;}
+        public List<Foods>MenuItems{get;set;}
+    }
+
+    public class ScrapeWeb
+    {
+        public List<string> ListOfResturants = new List<string>();
+        public List<string> ListOfMenus = new List<string>();
+        public List<string> ListOfFood = new List<string>();
+        public ScrapeWeb()
+        {
+            ListOfResturants = Get_Placess();
+            Resturants[] ArrayOfResturants = new Resturants[ListOfResturant.Count];
+
+            int count = 0;
+            foreach(Resturants rest in ListOfResturants)
+            {
+                rest.Name = ArrayOfResturants[count];
+                count++;
+            }
+            //Loop through all theresturant and menus scrape 
+            //Add the menu to the list in each resturant once the name of a resturant is called
+            //loop through all the foods and menus and resturants
+            //Once a resutrant name is called increase count then once a mneu is called increase the menu count
+            //from there keep adding food to the menu once a resturant or menu is called increase the appropriate count
+            //
+
+        }       
+        
+    }
 
 }
