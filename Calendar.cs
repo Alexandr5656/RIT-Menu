@@ -20,14 +20,1473 @@ namespace RIT_Menu
         public Calendar()
         {
             InitializeComponent();
+            openForm();
             this.radioButton1.Click += new EventHandler(RadioButton24__Click);
-            //this.radioButton2.Click += new EventHandler(RadioButton12__Click);
+            this.radioButton2.Click += new EventHandler(RadioButton12__Click);
             this.saveButton.Click += new EventHandler(SaveButton__Click);
             this.openButton.Click += new EventHandler(OpenButton__Click);
+            this.exitButton.Click += new EventHandler(ExitButton__Click);
         }
 
+        private void ExitButton__Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+        private void openForm()
+        {
+            string filePath = @"../../schedule.json";
+            events.LoadEvents(filePath);
+            foreach (EventClasses.Events evnt in events.eventsList)
+            {
+                if (evnt.Day == "Sunday" && evnt.Time == 0000)
+                {
+                    this.sunday12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0030)
+                {
+                    this.sunday1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0100)
+                {
+                    this.sunday1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0130)
+                {
+                    this.sunday130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0200)
+                {
+                    this.sunday2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0230)
+                {
+                    this.sunday230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0300)
+                {
+                    this.sunday3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0330)
+                {
+                    this.sunday330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0400)
+                {
+                    this.sunday4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0430)
+                {
+                    this.sunday430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0500)
+                {
+                    this.sunday5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0530)
+                {
+                    this.sunday530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0600)
+                {
+                    this.sunday6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0630)
+                {
+                    this.sunday630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0700)
+                {
+                    this.sunday7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0730)
+                {
+                    this.sunday730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0800)
+                {
+                    this.sunday8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0830)
+                {
+                    this.sunday830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0900)
+                {
+                    this.sunday9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 0930)
+                {
+                    this.sunday930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1000)
+                {
+                    this.sunday10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1030)
+                {
+                    this.sunday1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1100)
+                {
+                    this.sunday11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1130)
+                {
+                    this.sunday1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1200)
+                {
+                    this.sunday12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1230)
+                {
+                    this.sunday1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1300)
+                {
+                    this.sunday1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1330)
+                {
+                    this.sunday130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1400)
+                {
+                    this.sunday2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1430)
+                {
+                    this.sunday230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1500)
+                {
+                    this.sunday3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1530)
+                {
+                    this.sunday330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1600)
+                {
+                    this.sunday4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1630)
+                {
+                    this.sunday430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1700)
+                {
+                    this.sunday5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1730)
+                {
+                    this.sunday530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1800)
+                {
+                    this.sunday6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1830)
+                {
+                    this.sunday630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1900)
+                {
+                    this.sunday7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 1930)
+                {
+                    this.sunday730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2000)
+                {
+                    this.sunday8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2030)
+                {
+                    this.sunday830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2100)
+                {
+                    this.sunday9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2130)
+                {
+                    this.sunday930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2200)
+                {
+                    this.sunday10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2230)
+                {
+                    this.sunday1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2300)
+                {
+                    this.sunday11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Sunday" && evnt.Time == 2330)
+                {
+                    this.sunday1130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0000)
+                {
+                    this.monday12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0030)
+                {
+                    this.monday1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0100)
+                {
+                    this.monday1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0130)
+                {
+                    this.monday130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0200)
+                {
+                    this.monday2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0230)
+                {
+                    this.monday230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0300)
+                {
+                    this.monday3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0330)
+                {
+                    this.monday330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0400)
+                {
+                    this.monday4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0430)
+                {
+                    this.monday430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0500)
+                {
+                    this.monday5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0530)
+                {
+                    this.monday530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0600)
+                {
+                    this.monday6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0630)
+                {
+                    this.monday630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0700)
+                {
+                    this.monday7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0730)
+                {
+                    this.monday730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0800)
+                {
+                    this.monday8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0830)
+                {
+                    this.monday830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0900)
+                {
+                    this.monday9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 0930)
+                {
+                    this.monday930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1000)
+                {
+                    this.monday10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1030)
+                {
+                    this.monday1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1100)
+                {
+                    this.monday11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1130)
+                {
+                    this.monday1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1200)
+                {
+                    this.monday12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1230)
+                {
+                    this.monday1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1300)
+                {
+                    this.monday1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1330)
+                {
+                    this.monday130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1400)
+                {
+                    this.monday2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1430)
+                {
+                    this.monday230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1500)
+                {
+                    this.monday3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1530)
+                {
+                    this.monday330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1600)
+                {
+                    this.monday4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1630)
+                {
+                    this.monday430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1700)
+                {
+                    this.monday5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1730)
+                {
+                    this.monday530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1800)
+                {
+                    this.monday6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1830)
+                {
+                    this.monday630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1900)
+                {
+                    this.monday7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 1930)
+                {
+                    this.monday730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2000)
+                {
+                    this.monday8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2030)
+                {
+                    this.monday830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2100)
+                {
+                    this.monday9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2130)
+                {
+                    this.monday930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2200)
+                {
+                    this.monday10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2230)
+                {
+                    this.monday1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2300)
+                {
+                    this.monday11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Monday" && evnt.Time == 2330)
+                {
+                    this.monday1130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0000)
+                {
+                    this.tues12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0030)
+                {
+                    this.tues1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0100)
+                {
+                    this.tues1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0130)
+                {
+                    this.tues130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0200)
+                {
+                    this.tues2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0230)
+                {
+                    this.tues230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0300)
+                {
+                    this.tues3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0330)
+                {
+                    this.tues330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0400)
+                {
+                    this.tues4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0430)
+                {
+                    this.tues430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0500)
+                {
+                    this.tues5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0530)
+                {
+                    this.tues530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0600)
+                {
+                    this.tues6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0630)
+                {
+                    this.tues630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0700)
+                {
+                    this.tues7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0730)
+                {
+                    this.tues730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0800)
+                {
+                    this.tues8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0830)
+                {
+                    this.tues830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0900)
+                {
+                    this.tues9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 0930)
+                {
+                    this.tues930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1000)
+                {
+                    this.tues10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1030)
+                {
+                    this.tues1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1100)
+                {
+                    this.tues11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1130)
+                {
+                    this.tues1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1200)
+                {
+                    this.tues12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1230)
+                {
+                    this.tues1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1300)
+                {
+                    this.tues1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1330)
+                {
+                    this.tues130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1400)
+                {
+                    this.tues2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1430)
+                {
+                    this.tues230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1500)
+                {
+                    this.tues3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1530)
+                {
+                    this.tues330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1600)
+                {
+                    this.tues4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1630)
+                {
+                    this.tues430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1700)
+                {
+                    this.tues5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1730)
+                {
+                    this.tues530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1800)
+                {
+                    this.tues6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1830)
+                {
+                    this.tues630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1900)
+                {
+                    this.tues7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 1930)
+                {
+                    this.tues730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2000)
+                {
+                    this.tues8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2030)
+                {
+                    this.tues830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2100)
+                {
+                    this.tues9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2130)
+                {
+                    this.tues930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2200)
+                {
+                    this.tues10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2230)
+                {
+                    this.tues1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2300)
+                {
+                    this.tues11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Tuesday" && evnt.Time == 2330)
+                {
+                    this.tues1130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0000)
+                {
+                    this.wed12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0030)
+                {
+                    this.wed1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0100)
+                {
+                    this.wed1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0130)
+                {
+                    this.wed130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0200)
+                {
+                    this.wed2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0230)
+                {
+                    this.wed230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0300)
+                {
+                    this.wed3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0330)
+                {
+                    this.wed330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0400)
+                {
+                    this.wed4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0430)
+                {
+                    this.wed430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0500)
+                {
+                    this.wed5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0530)
+                {
+                    this.wed530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0600)
+                {
+                    this.wed6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0630)
+                {
+                    this.wed630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0700)
+                {
+                    this.wed7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0730)
+                {
+                    this.wed730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0800)
+                {
+                    this.wed8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0830)
+                {
+                    this.wed830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0900)
+                {
+                    this.wed9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 0930)
+                {
+                    this.wed930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1000)
+                {
+                    this.wed10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1030)
+                {
+                    this.wed1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1100)
+                {
+                    this.wed11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1130)
+                {
+                    this.wed1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1200)
+                {
+                    this.wed12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1230)
+                {
+                    this.wed1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1300)
+                {
+                    this.wed1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1330)
+                {
+                    this.wed130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1400)
+                {
+                    this.wed2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1430)
+                {
+                    this.wed230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1500)
+                {
+                    this.wed3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1530)
+                {
+                    this.wed330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1600)
+                {
+                    this.wed4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1630)
+                {
+                    this.wed430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1700)
+                {
+                    this.wed5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1730)
+                {
+                    this.wed530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1800)
+                {
+                    this.wed6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1830)
+                {
+                    this.wed630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1900)
+                {
+                    this.wed7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 1930)
+                {
+                    this.wed730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2000)
+                {
+                    this.wed8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2030)
+                {
+                    this.wed830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2100)
+                {
+                    this.wed9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2130)
+                {
+                    this.wed930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2200)
+                {
+                    this.wed10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2230)
+                {
+                    this.wed1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2300)
+                {
+                    this.wed11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Wednesday" && evnt.Time == 2330)
+                {
+                    this.wed1130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0000)
+                {
+                    this.th12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0030)
+                {
+                    this.th1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0100)
+                {
+                    this.th1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0130)
+                {
+                    this.th130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0200)
+                {
+                    this.th2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0230)
+                {
+                    this.th230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0300)
+                {
+                    this.th3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0330)
+                {
+                    this.th330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0400)
+                {
+                    this.th4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0430)
+                {
+                    this.th430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0500)
+                {
+                    this.th5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0530)
+                {
+                    this.th530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0600)
+                {
+                    this.th6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0630)
+                {
+                    this.th630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0700)
+                {
+                    this.th7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0730)
+                {
+                    this.th730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0800)
+                {
+                    this.th8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0830)
+                {
+                    this.th830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0900)
+                {
+                    this.th9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 0930)
+                {
+                    this.th930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1000)
+                {
+                    this.th10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1030)
+                {
+                    this.th1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1100)
+                {
+                    this.th11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1130)
+                {
+                    this.th1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1200)
+                {
+                    this.th12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1230)
+                {
+                    this.th1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1300)
+                {
+                    this.th1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1330)
+                {
+                    this.th130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1400)
+                {
+                    this.th2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1430)
+                {
+                    this.th230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1500)
+                {
+                    this.th3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1530)
+                {
+                    this.th330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1600)
+                {
+                    this.th4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1630)
+                {
+                    this.th430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1700)
+                {
+                    this.th5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1730)
+                {
+                    this.th530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1800)
+                {
+                    this.th6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1830)
+                {
+                    this.th630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1900)
+                {
+                    this.th7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 1930)
+                {
+                    this.th730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2000)
+                {
+                    this.th8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2030)
+                {
+                    this.th830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2100)
+                {
+                    this.th9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2130)
+                {
+                    this.th930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2200)
+                {
+                    this.th10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2230)
+                {
+                    this.th1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2300)
+                {
+                    this.th11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Thursday" && evnt.Time == 2330)
+                {
+                    this.th1130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0000)
+                {
+                    this.fri12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0030)
+                {
+                    this.fri1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0100)
+                {
+                    this.fri1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0130)
+                {
+                    this.fri130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0200)
+                {
+                    this.fri2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0230)
+                {
+                    this.fri230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0300)
+                {
+                    this.fri3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0330)
+                {
+                    this.fri330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0400)
+                {
+                    this.fri4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0430)
+                {
+                    this.fri430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0500)
+                {
+                    this.fri5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0530)
+                {
+                    this.fri530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0600)
+                {
+                    this.fri6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0630)
+                {
+                    this.fri630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0700)
+                {
+                    this.fri7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0730)
+                {
+                    this.fri730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0800)
+                {
+                    this.fri8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0830)
+                {
+                    this.fri830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0900)
+                {
+                    this.fri9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 0930)
+                {
+                    this.fri930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1000)
+                {
+                    this.fri10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1030)
+                {
+                    this.fri1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1100)
+                {
+                    this.fri11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1130)
+                {
+                    this.fri1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1200)
+                {
+                    this.fri12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1230)
+                {
+                    this.fri1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1300)
+                {
+                    this.fri1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1330)
+                {
+                    this.fri130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1400)
+                {
+                    this.fri2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1430)
+                {
+                    this.fri230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1500)
+                {
+                    this.fri3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1530)
+                {
+                    this.fri330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1600)
+                {
+                    this.fri4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1630)
+                {
+                    this.fri430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1700)
+                {
+                    this.fri5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1730)
+                {
+                    this.fri530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1800)
+                {
+                    this.fri6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1830)
+                {
+                    this.fri630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1900)
+                {
+                    this.fri7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 1930)
+                {
+                    this.fri730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2000)
+                {
+                    this.fri8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2030)
+                {
+                    this.fri830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2100)
+                {
+                    this.fri9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2130)
+                {
+                    this.fri930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2200)
+                {
+                    this.fri10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2230)
+                {
+                    this.fri1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2300)
+                {
+                    this.fri11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Friday" && evnt.Time == 2330)
+                {
+                    this.fri1130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0000)
+                {
+                    this.sat12aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0030)
+                {
+                    this.sat1230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0100)
+                {
+                    this.sat1aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0130)
+                {
+                    this.sat130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0200)
+                {
+                    this.sat2aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0230)
+                {
+                    this.sat230aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0300)
+                {
+                    this.sat3aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0330)
+                {
+                    this.sat330aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0400)
+                {
+                    this.sat4aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0430)
+                {
+                    this.sat430aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0500)
+                {
+                    this.sat5aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0530)
+                {
+                    this.sat530aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0600)
+                {
+                    this.sat6aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0630)
+                {
+                    this.sat630aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0700)
+                {
+                    this.sat7aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0730)
+                {
+                    this.sat730aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0800)
+                {
+                    this.sat8aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0830)
+                {
+                    this.sat830aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0900)
+                {
+                    this.sat9aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 0930)
+                {
+                    this.sat930aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1000)
+                {
+                    this.sat10aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1030)
+                {
+                    this.sat1030aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1100)
+                {
+                    this.sat11aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1130)
+                {
+                    this.sat1130aTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1200)
+                {
+                    this.sat12pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1230)
+                {
+                    this.sat1230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1300)
+                {
+                    this.sat1pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1330)
+                {
+                    this.sat130pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1400)
+                {
+                    this.sat2pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1430)
+                {
+                    this.sat230pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1500)
+                {
+                    this.sat3pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1530)
+                {
+                    this.sat330pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1600)
+                {
+                    this.sat4pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1630)
+                {
+                    this.sat430pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1700)
+                {
+                    this.sat5pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1730)
+                {
+                    this.sat530pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1800)
+                {
+                    this.sat6pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1830)
+                {
+                    this.sat630pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1900)
+                {
+                    this.sat7pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 1930)
+                {
+                    this.sat730pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2000)
+                {
+                    this.sat8pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2030)
+                {
+                    this.sat830pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2100)
+                {
+                    this.sat9pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2130)
+                {
+                    this.sat930pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2200)
+                {
+                    this.sat10pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2230)
+                {
+                    this.sat1030pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2300)
+                {
+                    this.sat11pTextBox.Text = evnt.Event;
+                }
+                else if (evnt.Day == "Saturday" && evnt.Time == 2330)
+                {
+                    this.sat1130pTextBox.Text = evnt.Event;
+                }
+
+            }
+        }
+        private void RadioButton12__Click(object sender, EventArgs e)
+        {
+            this.a12Label.Text = "12:00 AM";
+            this.a1230Label.Text = "12:30 AM";
+            this.a1Label.Text = "1:00 AM";
+            this.a130Label.Text = "1:30 AM";
+            this.a2Label.Text = "2:00 AM";
+            this.a230Label.Text = "2:30 AM";
+            this.a3Label.Text = "3:00 AM";
+            this.a330Label.Text = "3:30 AM";
+            this.a4Label.Text = "4:00 AM";
+            this.a430Label.Text = "4:30 AM";
+            this.a5Label.Text = "5:00 AM";
+            this.a530Label.Text = "5:30 AM";
+            this.a6Label.Text = "6:00 AM";
+            this.a630Label.Text = "6:30 AM";
+            this.a7Label.Text = "7:00 AM";
+            this.a730Label.Text = "7:30 AM";
+            this.a8Label.Text = "8:00 AM";
+            this.a830Label.Text = "8:30 AM";
+            this.a9Label.Text = "9:00 AM";
+            this.a930Label.Text = "9:30 AM";
+            this.a10Label.Text = "10:00 AM";
+            this.a1030Label.Text = "10:30 AM";
+            this.a11Label.Text = "11:00 AM";
+            this.a1130Label.Text = "11:30 AM";
+            this.p12Label.Text = "12:00 PM";
+            this.p1230Label.Text = "12:30 PM";
+            this.p1Label.Text = "1:00 PM";
+            this.p130Label.Text = "1:30 PM";
+            this.p2Label.Text = "2:00 PM";
+            this.p230Label.Text = "2:30 PM";
+            this.p3Label.Text = "3:00 PM";
+            this.p330Label.Text = "3:30 PM";
+            this.p4Label.Text = "4:00 PM";
+            this.p430Label.Text = "4:30 PM";
+            this.p5Label.Text = "5:00 PM";
+            this.p530Label.Text = "5:30 PM";
+            this.p6Label.Text = "6:00 PM";
+            this.p630Label.Text = "6:30 PM";
+            this.p7Label.Text = "7:00 PM";
+            this.p730Label.Text = "7:30 PM";
+            this.p8Label.Text = "8:00 PM";
+            this.p830Label.Text = "8:30 PM";
+            this.p9Label.Text = "9:00 PM";
+            this.p930Label.Text = "9:30 PM";
+            this.p10Label.Text = "10:00 PM";
+            this.p1030Label.Text = "10:30 PM";
+            this.p11Label.Text = "11:00 PM";
+            this.p1130Label.Text = "11:30 PM";
+
+        }
         private void RadioButton24__Click(object sender, EventArgs e)
         {
+            this.a12Label.Text = "00:00";
+            this.a1230Label.Text = "00:30";
+            this.a1Label.Text = "01:00";
+            this.a130Label.Text = "01:30";
+            this.a2Label.Text = "02:00";
+            this.a230Label.Text = "02:30";
+            this.a3Label.Text = "03:00";
+            this.a330Label.Text = "03:30";
+            this.a4Label.Text = "04:00";
+            this.a430Label.Text = "04:30";
+            this.a5Label.Text = "05:00";
+            this.a530Label.Text = "05:30";
+            this.a6Label.Text = "06:00";
+            this.a630Label.Text = "06:30";
+            this.a7Label.Text = "07:00";
+            this.a730Label.Text = "07:30";
+            this.a8Label.Text = "08:00";
+            this.a830Label.Text = "08:30";
+            this.a9Label.Text = "09:00";
+            this.a930Label.Text = "09:30";
+            this.a10Label.Text = "10:00";
+            this.a1030Label.Text = "10:30";
+            this.a11Label.Text = "11:00";
+            this.a1130Label.Text = "11:30";
+            this.p12Label.Text = "12:00";
+            this.p1230Label.Text = "12:30";
+            this.p1Label.Text = "13:00";
+            this.p130Label.Text = "13:30";
+            this.p2Label.Text = "14:00";
+            this.p230Label.Text = "14:30";
+            this.p3Label.Text = "15:00";
+            this.p330Label.Text = "15:30";
+            this.p4Label.Text = "16:00";
+            this.p430Label.Text = "16:30";
+            this.p5Label.Text = "17:00";
+            this.p530Label.Text = "17:30";
+            this.p6Label.Text = "18:00";
+            this.p630Label.Text = "18:30";
+            this.p7Label.Text = "19:00";
+            this.p730Label.Text = "19:30";
+            this.p8Label.Text = "20:00";
+            this.p830Label.Text = "20:30";
+            this.p9Label.Text = "21:00";
+            this.p930Label.Text = "21:30";
+            this.p10Label.Text = "22:00";
+            this.p1030Label.Text = "22:30";
+            this.p11Label.Text = "23:00";
+            this.p1130Label.Text = "23:30";
 
         }
         private void SaveButton__Click(object sender, EventArgs e)
