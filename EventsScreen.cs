@@ -41,6 +41,9 @@ namespace RIT_Menu
             // event handler for file save
             saveEventsButton.Click += new EventHandler(saveEvents);
 
+            // event handler for our filter
+            filter.SelectedIndexChanged += new EventHandler(filterEvents);
+
             // display the events in the FlowLayoutPanel
             foreach (Event thisEvent in events)
             {
@@ -171,6 +174,19 @@ namespace RIT_Menu
             GroupBox parentGroupBox = (GroupBox)buttonThatWasJustClicked.Parent;
             string eventName = parentGroupBox.Text;
 
+            Event thisEvent = findEventFromName(eventName);
+
+            AddToCal.addToCalendar(thisEvent.name, thisEvent.startTime, thisEvent.endTime);
+
+            buttonThatWasJustClicked.Text = "Added!";
+            buttonThatWasJustClicked.BackColor = Color.LightGreen;
+            buttonThatWasJustClicked.Enabled = false;
+
+        }
+
+        private Event findEventFromName(string eventName)
+        {
+
             // fallback stuff just in case we can't find the right event
             Event thisEvent = new Event("undefined", "undefined", "undefined", new DateTime(), new DateTime());
 
@@ -181,11 +197,30 @@ namespace RIT_Menu
                     thisEvent = anEvent;
             }
 
-            AddToCal.addToCalendar(thisEvent.name, thisEvent.startTime, thisEvent.endTime);
+            return thisEvent;
 
-            buttonThatWasJustClicked.Text = "Added!";
-            buttonThatWasJustClicked.BackColor = Color.LightGreen;
-            buttonThatWasJustClicked.Enabled = false;
+        }
+
+        private void filterEvents(object sender, EventArgs e)
+        {
+
+            // loop through our GroupBoxes
+            foreach (GroupBox thisGroupBox in this.flowLayoutPanel.Controls)
+            {
+
+                // find the event based off the name
+                Event thisEvent = findEventFromName(thisGroupBox.Text);
+
+                // get the filter type from the value of the ComboBox
+                string filterType = filter.SelectedItem.ToString();
+
+                // show it if it matches the search criteria
+                if ((filterType == "All" || filterType == thisEvent.type) && thisGroupBox.Text != "eventExampleTemplate")
+                    thisGroupBox.Visible = true;
+                else
+                    thisGroupBox.Visible = false;
+
+            }
 
         }
 

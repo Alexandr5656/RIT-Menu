@@ -38,7 +38,6 @@
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
             this.saveEventsButton = new System.Windows.Forms.ToolStripButton();
-            this.addEventButton = new System.Windows.Forms.ToolStripButton();
             this.filter = new System.Windows.Forms.ComboBox();
             this.Rit = new System.Windows.Forms.Label();
             this.flowLayoutPanel.SuspendLayout();
@@ -90,7 +89,7 @@
             this.groupBoxExample.Size = new System.Drawing.Size(607, 185);
             this.groupBoxExample.TabIndex = 0;
             this.groupBoxExample.TabStop = false;
-            this.groupBoxExample.Text = "Event Name";
+            this.groupBoxExample.Text = "eventExampleTemplate";
             // 
             // time
             // 
@@ -145,8 +144,7 @@
             this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.mainToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.backButton,
-            this.saveEventsButton,
-            this.addEventButton});
+            this.saveEventsButton});
             this.mainToolStrip.Location = new System.Drawing.Point(0, 0);
             this.mainToolStrip.Name = "mainToolStrip";
             this.mainToolStrip.Padding = new System.Windows.Forms.Padding(0);
@@ -176,16 +174,6 @@
             this.saveEventsButton.Name = "saveEventsButton";
             this.saveEventsButton.Size = new System.Drawing.Size(24, 24);
             this.saveEventsButton.Text = "Save new events";
-            // 
-            // addEventButton
-            // 
-            this.addEventButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.addEventButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addEventButton.Image = global::RIT_Menu.Properties.Resources.plus;
-            this.addEventButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(24, 24);
-            this.addEventButton.Text = "Add an event";
             // 
             // filter
             // 
@@ -250,6 +238,5 @@
         private System.Windows.Forms.ComboBox filter;
         private System.Windows.Forms.ToolStripButton saveEventsButton;
         private System.Windows.Forms.Label Rit;
-        private System.Windows.Forms.ToolStripButton addEventButton;
     }
 }
