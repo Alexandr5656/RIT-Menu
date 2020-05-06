@@ -13,6 +13,11 @@ using Newtonsoft.Json;
 
 namespace RIT_Menu
 {
+    public class Favorites
+    {
+        public string Name;
+        public bool Favorited;
+    }
     public class RIT
     {
         public List<Resturants> Rit;
@@ -22,7 +27,7 @@ namespace RIT_Menu
         /*****************************************************/
         public RIT()
         {
-            //ScrapeWeb sb = new ScrapeWeb();
+            
         }
         public void LoadResturants()
         {
