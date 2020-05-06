@@ -261,8 +261,9 @@
             "Dinner",
             "Coffee",
             "Take-Out",
-            "Dine-In"});
-            this.restCheck.Location = new System.Drawing.Point(1075, 9);
+            "Dine-In",
+            "All"});
+            this.restCheck.Location = new System.Drawing.Point(1056, 9);
             this.restCheck.Name = "restCheck";
             this.restCheck.Size = new System.Drawing.Size(101, 119);
             this.restCheck.TabIndex = 6;

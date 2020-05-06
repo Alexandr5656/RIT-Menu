@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using FoodClasses;
 namespace RIT_Menu
 {
 
@@ -63,7 +63,7 @@ namespace RIT_Menu
             AddLabel(550, 240 + (count * 20), "Closes at " + rests.Change_Time(rests.HourClose));
         }
 
-      
+
 
         /**************************************************/
         /*          Creates all the food labels           */
@@ -71,13 +71,17 @@ namespace RIT_Menu
         private void Show_Foods()
         {
             int count = 0;
-            foreach (Foods food in rests.Menu)
-            {
+            foreach (Menus menu in rests.menus)
+            { 
+
+                foreach (Foods food in menu.MenuItems)
+                {
 
 
-                AddLabel(200, 250 + (count * 20), "- " + food.Name + " : $" + food.Price);
+                    AddLabel(200, 250 + (count * 20), "- " + food.Name + " : $" + food.Price);
 
-                count++;
+                    count++;
+                }
             }
         }
 
