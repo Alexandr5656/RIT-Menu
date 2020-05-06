@@ -32,7 +32,7 @@ namespace RIT_Menu
             using (JsonWriter writer = new JsonTextWriter(sw))
             {
                 serializer.Serialize(writer, Rit);
-              
+
             }
         }
     }
@@ -221,14 +221,14 @@ namespace RIT_Menu
 
             return timing;
         }
-       
+
 
         /******************************************************************************************/
         /*          Adds a food to the menu maybe for a webscraper but its useless for now        */
         /******************************************************************************************/
         public void Add_Food(Foods food)
         {
-        Menu.Add(food);
+            Menu.Add(food);
         }
 
     }
@@ -243,12 +243,12 @@ namespace RIT_Menu
         public double Price { get; set; }
         public int TimeStart { get; set; }
         public int TimeEnd { get; set; }
-       
+
     }
     public class Menus
     {
-        public string Name{get;set;}
-        public List<Foods>MenuItems{get;set;}
+        public string Name { get; set; }
+        public List<Foods> MenuItems { get; set; }
     }
 
     public class ScrapeWeb
@@ -258,15 +258,15 @@ namespace RIT_Menu
         public List<string> ListOfFood = new List<string>();
         public ScrapeWeb()
         {
-            ListOfResturants = Get_Placess();
-            Resturants[] ArrayOfResturants = new Resturants[ListOfResturant.Count];
+            //ListOfResturants = Get_Placess();
+            //Resturants[] ArrayOfResturants = new Resturants[ListOfResturant.Count];
 
-            int count = 0;
-            foreach(Resturants rest in ListOfResturants)
-            {
-                rest.Name = ArrayOfResturants[count];
-                count++;
-            }
+            //int count = 0;
+            //foreach(Resturants rest in ListOfResturants)
+            //{
+            //    rest.Name = ArrayOfResturants[count];
+            //    count++;
+            //}
             //Loop through all theresturant and menus scrape 
             //Add the menu to the list in each resturant once the name of a resturant is called
             //loop through all the foods and menus and resturants
@@ -274,8 +274,8 @@ namespace RIT_Menu
             //from there keep adding food to the menu once a resturant or menu is called increase the appropriate count
             //
 
-        }       
-        
+        }
+
     }
 
 }
