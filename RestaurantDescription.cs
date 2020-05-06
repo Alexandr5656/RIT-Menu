@@ -111,6 +111,7 @@ namespace RIT_Menu
         /*****************************************************/
         private void Exit_Click(object sender, EventArgs e)
         {
+
             parentform.Visible = true;
             this.Close();
         }
@@ -135,6 +136,7 @@ namespace RIT_Menu
         {
             if (Favorites)
             {
+                
                 favorite.Text = "Add To Favorites?";
                 rests.favorites = false;
                 Favorites = false;

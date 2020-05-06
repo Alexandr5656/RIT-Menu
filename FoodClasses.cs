@@ -13,28 +13,88 @@ using Newtonsoft.Json;
 
 namespace RIT_Menu
 {
+    public class Favorites
+    {
+        public string Name;
+        public bool Favorited;
+        public Favorites()
+        { 
+        
+        }
+        public Favorites(string name, bool fav)
+        {
+            Name = name;
+            Favorited = fav;
+        }
+    }
     public class RIT
     {
         public List<Resturants> Rit;
-
+        public List<Favorites> favorites { get; set; }
         /*****************************************************/
         /*          Loads in resturants from Json            */
         /*****************************************************/
+        public void Add_Favorite(Favorites fav)
+        {
+         //could not add the favorites save function
+            // favorites.Add(fav);
+        }
         public RIT()
         {
-            ScrapeWeb sb = new ScrapeWeb();
+            favorites = new List<Favorites>();
+        }
+        public void LoadFavs()
+        {
+            using (System.IO.StreamReader r = new StreamReader("../../favoriteSave.json"))
+            {
+                string json = r.ReadToEnd();
+                favorites = JsonConvert.DeserializeObject<List<Favorites>>(json);
+
+            }
+        }
+        public void SaveFavs()
+        {
+            System.IO.File.WriteAllText(@"../../favoriteSave.json", string.Empty);
+            JsonSerializer serializer = new JsonSerializer();
+            using (StreamWriter sw = new StreamWriter("../../favoriteSave.json"))
+            using (JsonWriter writer = new JsonTextWriter(sw))
+            {
+                serializer.Serialize(writer, favorites);
+
+            }
         }
         public void LoadResturants()
         {
+            LoadFavs();
             using (System.IO.StreamReader r = new StreamReader("../../json1.json"))
             {
                 string json = r.ReadToEnd();
                 Rit = JsonConvert.DeserializeObject<List<Resturants>>(json);
 
             }
+            if (favorites!= null)
+            {
+            foreach (Resturants rest in Rit)
+            {
+                foreach (Favorites fav in favorites)
+                {
+                    if (fav.Name == rest.Name)
+                    {
+                        rest.favorites = true;
+                        break;
+                    }
+                    
+                }
+
+                
+            }
+            }
+
+            
         }
         public void SaveResturants()
         {
+            SaveFavs();
             System.IO.File.WriteAllText(@"../../json1.json", string.Empty);
             JsonSerializer serializer = new JsonSerializer();
             using (StreamWriter sw = new StreamWriter("../../json1.json"))
@@ -210,7 +270,7 @@ namespace RIT_Menu
 
                 timeTilClose += 2400;
             }
-            if (timeTilOpen >= timeNow && timeNow <= timeTilClose)
+            if (HourClose >= timeNow && timeNow >= HourOpen)
             {
                 IsOpen = true;
                 if (timeTilClose < 60)
@@ -219,7 +279,7 @@ namespace RIT_Menu
                 }
                 else
                 {
-                    timing = "Currently open.";
+                    timing = "Open!";
                 }
             }
             else

@@ -20,6 +20,7 @@ namespace RIT_Menu
             openEventsButton.Click += new EventHandler(openEventsScreen);
             openFoodButton.Click += new EventHandler(openFoodScreen);
             openCalendarButton.Click += new EventHandler(openCalendarScreen);
+            ScrapeWeb sb = new ScrapeWeb();
         }
 
         private void openEventsScreen(object sender, EventArgs e)
