@@ -26,7 +26,7 @@ namespace RIT_Menu
                 restCheck.SetItemChecked(i, true);
             }
             InitializePanels();
-
+            
         }
         /********************************************/
         /*          Saves Json On Closing           */
@@ -448,6 +448,26 @@ namespace RIT_Menu
         private void RestaurantList_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void exitBT_Click(object sender, EventArgs e)
+        {
+            if(RIT_Menu.favorites!=null)
+            RIT_Menu.favorites.Clear();
+
+            foreach (Resturants rest in RIT_Menu.Rit)
+            {
+                if (rest.favorites)
+                {
+                    Favorites fav = new Favorites("ss", true);
+                    RIT_Menu.Add_Favorite(fav);
+
+
+                }
+               
+            }
+            RIT_Menu.SaveFavs();
+            this.Close();
         }
     }
 }
