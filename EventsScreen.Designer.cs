@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.eventsTitle = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.groupBoxExample = new System.Windows.Forms.GroupBox();
             this.time = new System.Windows.Forms.Label();
             this.addButton = new System.Windows.Forms.Button();
             this.description = new System.Windows.Forms.Label();
+            this.photo = new System.Windows.Forms.PictureBox();
             this.mainToolStrip = new System.Windows.Forms.ToolStrip();
             this.backButton = new System.Windows.Forms.ToolStripButton();
-            this.filter = new System.Windows.Forms.ComboBox();
-            this.Rit = new System.Windows.Forms.Label();
             this.saveEventsButton = new System.Windows.Forms.ToolStripButton();
             this.addEventButton = new System.Windows.Forms.ToolStripButton();
-            this.photo = new System.Windows.Forms.PictureBox();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.filter = new System.Windows.Forms.ComboBox();
+            this.Rit = new System.Windows.Forms.Label();
+            this.flowLayoutPanel.SuspendLayout();
             this.groupBoxExample.SuspendLayout();
-            this.mainToolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.photo)).BeginInit();
+            this.mainToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // eventsTitle
@@ -61,19 +61,19 @@
             this.eventsTitle.Text = "Browse events";
             this.eventsTitle.Click += new System.EventHandler(this.eventsTitle_Click);
             // 
-            // flowLayoutPanel1
+            // flowLayoutPanel
             // 
-            this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.Controls.Add(this.groupBoxExample);
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 150);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(1);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(643, 343);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(643, 343);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(643, 343);
-            this.flowLayoutPanel1.TabIndex = 1;
-            this.flowLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.AutoSize = true;
+            this.flowLayoutPanel.Controls.Add(this.groupBoxExample);
+            this.flowLayoutPanel.Location = new System.Drawing.Point(12, 150);
+            this.flowLayoutPanel.Margin = new System.Windows.Forms.Padding(1);
+            this.flowLayoutPanel.MaximumSize = new System.Drawing.Size(643, 343);
+            this.flowLayoutPanel.MinimumSize = new System.Drawing.Size(643, 343);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(643, 343);
+            this.flowLayoutPanel.TabIndex = 1;
+            this.flowLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // groupBoxExample
             // 
@@ -128,6 +128,18 @@
             this.description.TabIndex = 1;
             this.description.Text = "Lorem ipsum";
             // 
+            // photo
+            // 
+            this.photo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.photo.InitialImage = global::RIT_Menu.Properties.Resources.loading2;
+            this.photo.Location = new System.Drawing.Point(13, 33);
+            this.photo.Margin = new System.Windows.Forms.Padding(1);
+            this.photo.Name = "photo";
+            this.photo.Size = new System.Drawing.Size(125, 131);
+            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.photo.TabIndex = 0;
+            this.photo.TabStop = false;
+            // 
             // mainToolStrip
             // 
             this.mainToolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -155,6 +167,26 @@
             this.backButton.Text = "< Back";
             this.backButton.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // saveEventsButton
+            // 
+            this.saveEventsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.saveEventsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.saveEventsButton.Image = global::RIT_Menu.Properties.Resources.new_save;
+            this.saveEventsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveEventsButton.Name = "saveEventsButton";
+            this.saveEventsButton.Size = new System.Drawing.Size(24, 24);
+            this.saveEventsButton.Text = "Save new events";
+            // 
+            // addEventButton
+            // 
+            this.addEventButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.addEventButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addEventButton.Image = global::RIT_Menu.Properties.Resources.plus;
+            this.addEventButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.addEventButton.Name = "addEventButton";
+            this.addEventButton.Size = new System.Drawing.Size(24, 24);
+            this.addEventButton.Text = "Add an event";
+            // 
             // filter
             // 
             this.filter.DisplayMember = "All";
@@ -180,38 +212,6 @@
             this.Rit.Text = "RIT";
             this.Rit.Click += new System.EventHandler(this.Rit_Click);
             // 
-            // saveEventsButton
-            // 
-            this.saveEventsButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.saveEventsButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.saveEventsButton.Image = global::RIT_Menu.Properties.Resources.new_save;
-            this.saveEventsButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveEventsButton.Name = "saveEventsButton";
-            this.saveEventsButton.Size = new System.Drawing.Size(24, 24);
-            this.saveEventsButton.Text = "Save new events";
-            // 
-            // addEventButton
-            // 
-            this.addEventButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.addEventButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.addEventButton.Image = global::RIT_Menu.Properties.Resources.plus;
-            this.addEventButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addEventButton.Name = "addEventButton";
-            this.addEventButton.Size = new System.Drawing.Size(24, 24);
-            this.addEventButton.Text = "Add an event";
-            // 
-            // photo
-            // 
-            this.photo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.photo.InitialImage = global::RIT_Menu.Properties.Resources.loading2;
-            this.photo.Location = new System.Drawing.Point(13, 33);
-            this.photo.Margin = new System.Windows.Forms.Padding(1);
-            this.photo.Name = "photo";
-            this.photo.Size = new System.Drawing.Size(125, 131);
-            this.photo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.photo.TabIndex = 0;
-            this.photo.TabStop = false;
-            // 
             // EventsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,18 +219,18 @@
             this.ClientSize = new System.Drawing.Size(671, 502);
             this.Controls.Add(this.filter);
             this.Controls.Add(this.mainToolStrip);
-            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.flowLayoutPanel);
             this.Controls.Add(this.eventsTitle);
             this.Controls.Add(this.Rit);
             this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "EventsScreen";
             this.Text = "EventsScreen";
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.flowLayoutPanel.ResumeLayout(false);
             this.groupBoxExample.ResumeLayout(false);
             this.groupBoxExample.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.mainToolStrip.ResumeLayout(false);
             this.mainToolStrip.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.photo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,7 +239,7 @@
         #endregion
 
         private System.Windows.Forms.Label eventsTitle;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
         private System.Windows.Forms.GroupBox groupBoxExample;
         private System.Windows.Forms.Label time;
         private System.Windows.Forms.Label description;

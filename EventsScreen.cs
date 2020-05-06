@@ -120,8 +120,8 @@ namespace RIT_Menu
             thisGroupBox.Show();
 
             // add our new GroupBox to the FlowLayoutPanel
-            this.flowLayoutPanel1.Controls.Add(thisGroupBox);
-            this.flowLayoutPanel1.Controls.SetChildIndex(thisGroupBox, flowLayoutPanel1.Controls.Count);
+            this.flowLayoutPanel.Controls.Add(thisGroupBox);
+            this.flowLayoutPanel.Controls.SetChildIndex(thisGroupBox, flowLayoutPanel.Controls.Count);
 
             // set the name to the event title
             thisGroupBox.Text = thisEvent.name;
@@ -173,6 +173,8 @@ namespace RIT_Menu
 
             // fallback stuff just in case we can't find the right event
             Event thisEvent = new Event("undefined", "undefined", "undefined", new DateTime(), new DateTime());
+
+            // find the event based off the event name
             foreach (Event anEvent in events)
             {
                 if (anEvent.name == eventName)
