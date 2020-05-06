@@ -11,7 +11,7 @@ using Scraper;
 using Newtonsoft.Json;
 
 
-namespace FoodClasses
+namespace RIT_Menu
 {
     public class RIT
     {
