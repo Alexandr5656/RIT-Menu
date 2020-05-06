@@ -50,5 +50,15 @@ namespace RIT_Menu
         {
 
         }
+
+        private void Rit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openCalendarButton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
