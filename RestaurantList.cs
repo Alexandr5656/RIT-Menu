@@ -171,25 +171,21 @@ namespace RIT_Menu
             panel1.Name = "panel1";
             panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             panel1.Size = new System.Drawing.Size(400, 200);
-            panel1.BackColor = System.Drawing.Color.Black;
-            panel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            panel1.BackColor = System.Drawing.Color.Silver;
+            panel1.ForeColor = System.Drawing.Color.Black;
             panel1.TabIndex = 4;
 
             /************************************/
             /*       Name of the Resturant      */
             /************************************/
-            float fss;
-            if (resturant.Name.Length>7)
-            fss = 300/resturant.Name.Length;
-            else
-                fss = 100 / resturant.Name.Length;
-            restLabel.Font = new System.Drawing.Font("Ariel", fss, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            
+            restLabel.Font = new System.Drawing.Font("Ariel", 15, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             restLabel.Location = new System.Drawing.Point(0, 0);
             restLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             restLabel.Name = "restLabel";
-            restLabel.Size = new System.Drawing.Size(100, 23);
-            
-            restLabel.AutoSize = true;
+            restLabel.Size = new System.Drawing.Size(200, 75);
+            restLabel.MaximumSize = new System.Drawing.Size(200, 75);
+            restLabel.AutoSize = false;
             restLabel.TabIndex = 0;
             restLabel.Text = resturant.Name;
             restLabel.Click += (sender, e) => nameClick(sender, e, resturant);
@@ -204,11 +200,11 @@ namespace RIT_Menu
             openedLabel.Size = new System.Drawing.Size(75, 50);
             openedLabel.TabIndex = 10;
             openedLabel.AutoSize = true;
-            openedLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            if(resturant.times().Equals("Closed"))
+            openedLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            if(resturant.times().Equals("Closing soon."))
+                openedLabel.Location = new System.Drawing.Point(195, 13);
+            else 
                 openedLabel.Location = new System.Drawing.Point(250, 13);
-            else
-                openedLabel.Location = new System.Drawing.Point(150, 13);
             openedLabel.Text = resturant.times();
             
 
@@ -222,7 +218,7 @@ namespace RIT_Menu
             /*            Cost Labeling         */
             /************************************/
             cashLabel.Font = new System.Drawing.Font("Ariel", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cashLabel.Location = new System.Drawing.Point(167, 248);
+            cashLabel.Location = new System.Drawing.Point(167, 170);
             cashLabel.Name = "cashLabel";
             cashLabel.Size = new System.Drawing.Size(57, 27);
             cashLabel.TabIndex = 1;
@@ -409,6 +405,15 @@ namespace RIT_Menu
         /*********************************************************************/
         private void ShowClosed_CheckedChanged(object sender, EventArgs e)
         {
+            if (showOpen.Checked)
+            {
+                showOpen.Text = "Only Showing Opened";
+                
+            }
+            else if (!showOpen.Checked)
+            {
+                showOpen.Text = "Showing Opened and Closed";
+            }
 
             InitializePanels();
         }

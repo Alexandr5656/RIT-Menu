@@ -35,14 +35,15 @@
             this.Hours = new System.Windows.Forms.Label();
             this.favorite = new System.Windows.Forms.Button();
             this.descLB = new System.Windows.Forms.Label();
+            this.Rit = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // restName
             // 
             this.restName.BackColor = System.Drawing.Color.Black;
             this.restName.Font = new System.Drawing.Font("Arial", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.restName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
-            this.restName.Location = new System.Drawing.Point(-1, -1);
+            this.restName.ForeColor = System.Drawing.Color.White;
+            this.restName.Location = new System.Drawing.Point(0, -1);
             this.restName.Name = "restName";
             this.restName.Size = new System.Drawing.Size(1194, 139);
             this.restName.TabIndex = 0;
@@ -94,8 +95,8 @@
             this.favorite.BackColor = System.Drawing.Color.Black;
             this.favorite.FlatAppearance.BorderSize = 0;
             this.favorite.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.favorite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
-            this.favorite.Image = global::RIT_Menu.Properties.Resources.star;
+            this.favorite.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.favorite.ForeColor = System.Drawing.Color.White;
             this.favorite.Location = new System.Drawing.Point(815, 49);
             this.favorite.Name = "favorite";
             this.favorite.Size = new System.Drawing.Size(178, 39);
@@ -108,18 +109,30 @@
             // 
             this.descLB.AutoSize = true;
             this.descLB.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.descLB.Location = new System.Drawing.Point(96, 177);
+            this.descLB.Location = new System.Drawing.Point(36, 165);
+            this.descLB.MaximumSize = new System.Drawing.Size(1200, 0);
             this.descLB.Name = "descLB";
             this.descLB.Size = new System.Drawing.Size(109, 25);
             this.descLB.TabIndex = 8;
             this.descLB.Text = "Description";
+            // 
+            // Rit
+            // 
+            this.Rit.BackColor = System.Drawing.Color.Black;
+            this.Rit.Font = new System.Drawing.Font("Arial", 60F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            this.Rit.Location = new System.Drawing.Point(-7, -1);
+            this.Rit.Name = "Rit";
+            this.Rit.Size = new System.Drawing.Size(397, 133);
+            this.Rit.TabIndex = 9;
+            this.Rit.Text = "RIT";
             // 
             // RestaurantDescription
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(105)))), ((int)(((byte)(2)))));
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1184, 580);
             this.ControlBox = false;
             this.Controls.Add(this.descLB);
@@ -128,7 +141,9 @@
             this.Controls.Add(this.Foods);
             this.Controls.Add(this.Exit);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.Rit);
             this.Controls.Add(this.restName);
+            this.MaximumSize = new System.Drawing.Size(1202, 627);
             this.Name = "RestaurantDescription";
             this.ShowIcon = false;
             this.Text = "Resturant";
@@ -146,5 +161,6 @@
         private System.Windows.Forms.Label Hours;
         private System.Windows.Forms.Button favorite;
         private System.Windows.Forms.Label descLB;
+        private System.Windows.Forms.Label Rit;
     }
 }

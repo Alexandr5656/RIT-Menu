@@ -22,7 +22,7 @@ namespace RIT_Menu
         /*****************************************************/
         public RIT()
         {
-            ScrapeWeb sb = new ScrapeWeb();
+            //ScrapeWeb sb = new ScrapeWeb();
         }
         public void LoadResturants()
         {
@@ -210,7 +210,7 @@ namespace RIT_Menu
 
                 timeTilClose += 2400;
             }
-            if (timeTilOpen >= timeNow && timeNow <= timeTilClose)
+            if (HourClose >= timeNow && timeNow >= HourOpen)
             {
                 IsOpen = true;
                 if (timeTilClose < 60)
@@ -219,7 +219,7 @@ namespace RIT_Menu
                 }
                 else
                 {
-                    timing = "Currently open.";
+                    timing = "Open!";
                 }
             }
             else
