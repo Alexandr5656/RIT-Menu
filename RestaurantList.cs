@@ -7,7 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Windows.Forms.VisualStyles;
+using FoodClasses;
 namespace RIT_Menu
 {
     public partial class RestaurantList : Form
@@ -20,7 +21,7 @@ namespace RIT_Menu
             RIT_Menu.LoadResturants();
             this.VerticalScroll.Visible = false;
             panel1.Visible = false;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
                 restCheck.SetItemChecked(i, true);
             }
@@ -45,11 +46,40 @@ namespace RIT_Menu
 
             foreach (Resturants rest in RIT_Menu.Rit)
             {
-               
+                
+
                 if (showOpen.Checked)
                 {
                     if (rest.IsOpen)
                     {
+                        if (restCheck.CheckedItems.Contains("All"))
+                        {
+                            AddFavPanel(rest);
+                            AddPanel(rest);
+                            
+                        }
+                        else
+                            foreach (string type in restCheck.CheckedItems)
+                            {
+                                if (rest.Type.Contains(type))
+                                {
+                                    AddFavPanel(rest);
+                                    AddPanel(rest);
+                                    break;
+                                }
+                            }
+                    }
+                }
+                else if (!showOpen.Checked)
+                {
+
+                    if (restCheck.CheckedItems.Contains("All"))
+                    {
+                        AddFavPanel(rest);
+                        AddPanel(rest);
+                        
+                    }
+                    else
                         foreach (string type in restCheck.CheckedItems)
                         {
                             if (rest.Type.Contains(type))
@@ -59,20 +89,6 @@ namespace RIT_Menu
                                 break;
                             }
                         }
-                    }
-                }
-                else if (!showOpen.Checked)
-                {
-
-                    foreach (string type in restCheck.CheckedItems)
-                    {
-                        if (rest.Type.Contains(type))
-                        {
-                            AddFavPanel(rest);
-                            AddPanel(rest);
-                            break;
-                        }
-                    }
                 }
             }
 
@@ -162,11 +178,17 @@ namespace RIT_Menu
             /************************************/
             /*       Name of the Resturant      */
             /************************************/
-            restLabel.Font = new System.Drawing.Font("Ariel", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            float fss;
+            if (resturant.Name.Length>7)
+            fss = 300/resturant.Name.Length;
+            else
+                fss = 100 / resturant.Name.Length;
+            restLabel.Font = new System.Drawing.Font("Ariel", fss, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             restLabel.Location = new System.Drawing.Point(0, 0);
             restLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
             restLabel.Name = "restLabel";
             restLabel.Size = new System.Drawing.Size(100, 23);
+            
             restLabel.AutoSize = true;
             restLabel.TabIndex = 0;
             restLabel.Text = resturant.Name;
@@ -183,6 +205,10 @@ namespace RIT_Menu
             openedLabel.TabIndex = 10;
             openedLabel.AutoSize = true;
             openedLabel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            if(resturant.times().Equals("Closed"))
+                openedLabel.Location = new System.Drawing.Point(250, 13);
+            else
+                openedLabel.Location = new System.Drawing.Point(150, 13);
             openedLabel.Text = resturant.times();
             
 
@@ -238,19 +264,19 @@ namespace RIT_Menu
                 {
                     if (i > 2)
                         break;
-                    Add_Label(ref panel1, 45, 95 + (20 * i), "- "+resturant.Specials[i].Name + " : $" + resturant.Menu[i].Price.ToString());
+                    Add_Label(ref panel1, 45, 95 + (20 * i), "- "+resturant.Specials[i].Name + " : $" + resturant.Specials[i].Price.ToString());
                 }
 
 
             }
-            else if (resturant.Menu.Count() > 0)
+            else if (resturant.menus[0].MenuItems.Count() > 0)
             {
                 specialLabel.Text = "Menu";
-                for (int i = 0; i < resturant.Menu.Count; i++)
+                for (int i = 0; i < resturant.menus[0].MenuItems.Count; i++)
                 {
                     if (i > 2)
                         break;
-                    Add_Label(ref panel1, 45, 95 + (20 * i), "- " + resturant.Menu[i].Name+" : $"+resturant.Menu[i].Price.ToString());
+                    Add_Label(ref panel1, 45, 95 + (20 * i), "- " + resturant.menus[0].MenuItems[i].Name +" : $"+ resturant.menus[0].MenuItems[i].Price.ToString());
 
                 }
             }

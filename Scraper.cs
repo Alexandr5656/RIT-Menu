@@ -1,22 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
-namespace HtmlParseScraper
+namespace Scraper
 {
-    public class Scraper
+    public class Scraping
     {
-
-
-        public static List<string> Get_List()
+        public Scraping()
         {
-
-            HtmlWeb web = new HtmlWeb();
-
             //Full list of things
-            string test = "/html/body/div[3]/div[2]/div[1]/section[1]/div[1]/div[2]/section/div/div[2]/div[2]";
+            string FullHtmlList = "/html/body/div[3]/div[2]/div[1]/section[1]/div[1]/div[2]/section/div/div[2]/div[2]";
 
             //List of Hours
             string hourTest = "/html/body/div[3]/div[2]/div[1]/section[1]/div[1]/div/section/div/div";
@@ -30,6 +26,9 @@ namespace HtmlParseScraper
             // Parse tool for Menu categories
             string titlem = "<div class=\"menu-category\">";
 
+            //Parse tool for Food Objects
+            string foodie = "menu-items\">";
+
             // Parse tool for Hours
             string wed = "<div class=\"row panel-body\">";
 
@@ -39,32 +38,58 @@ namespace HtmlParseScraper
             //Menu website
             string menuWeb = "https://www.rit.edu/fa/diningservices/general-menus";
 
-            //Loads Website
-            HtmlDocument doc = web.Load(menuWeb);
 
+
+        }
+
+
+        public List<string> Get_List(string parser, string BiggerHtml, string website)
+        {
+
+            HtmlWeb web = new HtmlWeb();
+
+
+
+            //Loads Website
+            HtmlDocument doc = web.Load(website);
+            string Total_Html = "";
             //Loads all the html for Resturant titles and below
-            foreach (var items in doc.DocumentNode.SelectNodes(test))
+            foreach (var items in doc.DocumentNode.SelectNodes(BiggerHtml))
             {
-                ae = (items.InnerHtml);
+                Total_Html = (items.InnerHtml);
             }
 
 
             // List of the name of the resturants
-            List<string> Names = ParseSpecfic(ae, names);
-            // List of menu categories
-            List<string> Titles = ParseSpecfic(ae, titlem);
+            List<string> elem_List = ParseSpecfic(Total_Html, parser);
 
 
-            // Prints all the titles as a test
-            foreach (string word in Titles)
+
+            return elem_List;
+        }
+        public List<string> Get_List(string parser, string BiggerHtml, string website, string secParse)
+        {
+
+            HtmlWeb web = new HtmlWeb();
+
+
+
+            //Loads Website
+            HtmlDocument doc = web.Load(website);
+            string Total_Html = "";
+            //Loads all the html for Resturant titles and below
+            foreach (var items in doc.DocumentNode.SelectNodes(BiggerHtml))
             {
-                Console.WriteLine(word);
+                Total_Html = (items.InnerHtml);
             }
-            Console.WriteLine("Done");
 
 
-            Console.ReadLine();
-            return Titles;
+            // List of the name of the resturants
+            List<string> elem_List = ParseSpecfic(Total_Html, parser, secParse);
+
+
+
+            return elem_List;
         }
 
         //Parses the html by adding the text after the parser string which is a html code til a < appears
@@ -96,7 +121,51 @@ namespace HtmlParseScraper
 
             return Titles;
         }
+        //Gets two sets of data
+        public static List<string> ParseSpecfic(string st, string parser, string secParse)
+        {
 
+
+            List<string> Titles = new List<string>();
+
+            for (int i = 0; i < st.Length - (parser.Length + 1); i++)
+            {
+                if ((st.Substring(i, parser.Length)).Equals(parser))
+                {
+                    string temp = "";
+
+                    for (int j = i + parser.Length; j < st.Length - (parser.Length + 1); j++)
+                    {
+                        temp += st[j];
+                        if (st[j + 1].Equals('<'))
+                        {
+
+                            Titles.Add(temp);
+                            break;
+                        }
+
+                    }
+                }
+                else if ((st.Substring(i, secParse.Length)).Equals(secParse))
+                {
+                    string temp = "";
+
+                    for (int j = i + secParse.Length; j < st.Length - (secParse.Length + 1); j++)
+                    {
+                        temp += st[j];
+                        if (st[j + 1].Equals('<'))
+                        {
+
+                            Titles.Add(temp);
+                            break;
+                        }
+
+                    }
+                }
+            }
+
+            return Titles;
+        }
 
         //Cleans any html of html code and only leave a list of text
         public static List<string> CleanUp(List<string> array1)
@@ -119,4 +188,6 @@ namespace HtmlParseScraper
             return cleaned;
         }
     }
+
+
 }
